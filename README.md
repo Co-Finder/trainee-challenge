@@ -19,7 +19,29 @@ We are looking for someone with skill to build clean code behind functional, and
 * Our backend will be a Firebase App;
 
 # Firebase's config:
+```
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyC5-epTvINgG6p8G1zb88uFU0byIgrYchE",
+  authDomain: "test-start-cooking-3d043.firebaseapp.com",
+  projectId: "test-start-cooking-3d043",
+  storageBucket: "test-start-cooking-3d043.appspot.com",
+  messagingSenderId: "418952924914",
+  appId: "1:418952924914:web:14a9608dcabc1eb9318a6b",
+  measurementId: "G-8VNS7LBF4V"
+};
+```
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 # Firebase Firestore's APIs
 
