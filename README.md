@@ -29,27 +29,27 @@ We are looking for someone with skill to build clean code behind functional, and
 	API de notificações:
 		https://
 
-#Project Tasks
+# Project Tasks
 
-##Screens
+## Screens
 	Criação de componentes de telas para navegação:
 		Login;
 		Home;
 		Notification;
 		Profile.
 
-##Login Screen
+## Login Screen
 	Implementar tela de login;
 	Validar email entrado no campo username;
 	Ação de login
 
-##Main navigation
+## Main navigation
 	Criar Componente de navegação com os itens:
 		Home: levando para a tela de listagem;
 		Notification: levando para a tela de Notificações;
 		Profile: levando para a tela de Profile;
 
-##Home Screen
+## Home Screen
 	Implementar Tela Home
 	Adicionar Navegação Principal;
 	Buscar dados de receitas da API de receitas;
@@ -57,21 +57,21 @@ We are looking for someone with skill to build clean code behind functional, and
 	Criar campo de pesquisa que filtrará os dados de receitas pelo nome das Receitas;
 	Criar campos de filtro de acordo com as categorias.
 
-##Recipe's card component
+## Recipe's card component
 	Implementar o layout do card de receita;
 	Implementar ação de adicionar a receita aos favoritos;
 	
-##Receipe's Details Screen
+## Receipe's Details Screen
 	Implementar o layout da tela de detalhes de uma receita;
 	Implementar ação de adicionar a receita aos favoritos;
 	Implementar a descrição de instruções;
 	Implementar a listagem de ingredientes com suas medidas.
 
-##Profile's Screen
+## Profile's Screen
 	Implementar o layout da tela de Profile;
 	Implementar a listagem de receitas favoritadas pelo usuário.
 
-##Notifications Screen
+## Notifications Screen
 	Implementar o layout da tela de Notifications;
 	Buscar as notificações na API de notificações;
 	Implementar a listagem de notificações.
