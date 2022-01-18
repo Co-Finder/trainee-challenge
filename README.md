@@ -4,98 +4,29 @@ Our vision is to put a new generation of the startup ecosystem in everyone's poc
 
 You can find us [here](https://www.cofinderapp.com/)!
 
-# Welcome to Start Cooking, the test app for Co.finder team.
+---
 
-Start Cooking is a recipe book in a app.
-Made in react-native it allows registered users to find and favorites meals and drinks recipes.
+# Welcome to Start Cooking, your challenge to be part of our trainee program.
 
-# About this test
+Start Cooking is a recipe book app and it allows registered users to find and favorite meals and drinks.
 
-The goal of this test is to understand more about your skills as a frontend developer.
-We are looking for someone with skill to build clean code behind functional, and perfomant, and beatiful interfaces.
+# About this challenge
 
-# Required:
-* This project have to be develop using react-native;
-* Our backend will be a Firebase App;
+The goal of this challenge is to understand more about your skills as a developer.
+We are looking for someone with skill to build clean code behind functional with a beautiful design.
 
-# Firebase's config:
-```
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+# Stack:
+* This project should be develop using react-native;
+* You should use Firebase as a backend;
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyC5-epTvINgG6p8G1zb88uFU0byIgrYchE",
-  authDomain: "test-start-cooking-3d043.firebaseapp.com",
-  projectId: "test-start-cooking-3d043",
-  storageBucket: "test-start-cooking-3d043.appspot.com",
-  messagingSenderId: "418952924914",
-  appId: "1:418952924914:web:14a9608dcabc1eb9318a6b",
-  measurementId: "G-8VNS7LBF4V"
-};
-```
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-# Firebase Firestore's APIs
-
-Notification's API: [https://test](https://test)
-
-Recipe's API: [https://test](https://test)
-
-User's API: [https://test](https://test)
-
-# Project Tasks
+# Your Tasks
 
 ## Screens
-	Criação de componentes de telas para navegação:
-		Login;
-		Home;
-		Notification;
-		Profile.
+- Login,
+- Home,
+- Notification, and
+- Profile.
 
-## Login Screen
-	Implementar tela de login;
-	Validar email entrado no campo username;
-	Ação de login
-
-## Main navigation
-	Criar Componente de navegação com os itens:
-		Home: levando para a tela de listagem;
-		Notification: levando para a tela de Notificações;
-		Profile: levando para a tela de Profile;
-
-## Home Screen
-	Implementar Tela Home
-	Adicionar Navegação Principal;
-	Buscar dados de receitas da API de receitas;
-	Listar os dados de receitas em formato Grid com apenas 2 cards por linha;
-	Criar campo de pesquisa que filtrará os dados de receitas pelo nome das Receitas;
-	Criar campos de filtro de acordo com as categorias.
-
-## Recipe's card component
-	Implementar o layout do card de receita;
-	Implementar ação de adicionar a receita aos favoritos;
-	
-## Receipe's Details Screen
-	Implementar o layout da tela de detalhes de uma receita;
-	Implementar ação de adicionar a receita aos favoritos;
-	Implementar a descrição de instruções;
-	Implementar a listagem de ingredientes com suas medidas.
-
-## Profile's Screen
-	Implementar o layout da tela de Profile;
-	Implementar a listagem de receitas favoritadas pelo usuário.
-
-## Notifications Screen
-	Implementar o layout da tela de Notifications;
-	Buscar as notificações na API de notificações;
-	Implementar a listagem de notificações.
-
+## Design
+You can access the design using this link [Co.finder Trainee Challenge - Figma](https://www.figma.com/file/ZOC3mcr9YPbYpdYQv55K6c/Co.finder---Trainee-Challenge?node-id=0%3A1)
 	
