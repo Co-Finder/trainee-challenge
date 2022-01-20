@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, StatusBar, Text, View } from 'react-native';
 
+// import Home from './src/Pages/Home/index'
 //teste
-import Home from './src/Pages/Home/index'
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Everything is ok...</Text>
-      <Home />
+      {/* <Home /> */}
       <StatusBar backgroundColor="#fff" barStyle="dark-content" />
     </SafeAreaView>
   );
