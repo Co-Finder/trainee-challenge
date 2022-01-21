@@ -1,15 +1,13 @@
-import React from 'react';
-import { StyleSheet, SafeAreaView, StatusBar, Text, View } from 'react-native';
-
-// import Home from './src/Pages/Home/index'
-//teste
+import React from "react";
+import { StyleSheet, ScrollView, SafeAreaView, StatusBar, Text, View } from "react-native";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Everything is ok...</Text>
-      {/* <Home /> */}
-      <StatusBar backgroundColor="#fff" barStyle="dark-content" />
+      <ScrollView>
+        <StatusBar backgroundColor="#fff" barStyle="dark-content" />
+        <Text>Everything is ok...</Text>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -17,8 +15,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
-    alignItems: 'center',
-    paddingTop: Platform.OS === 'android' ? 40: 0,
+    backgroundColor: "#FFFFFF",
+    alignItems: "center",
+    paddingTop: Platform.OS === "android" ? 40 : 0,
   },
 });
