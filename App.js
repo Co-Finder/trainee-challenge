@@ -1,14 +1,15 @@
 import React from "react";
 import { StyleSheet, ScrollView, SafeAreaView, StatusBar, Text, View } from "react-native";
 import Like from './src/Components/Like'
+import PhotoProfile from "./src/Components/PhotoProfile";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <StatusBar backgroundColor="#fff" barStyle="dark-content" />
-        
         <Like />
+        <PhotoProfile />
       </ScrollView>
     </SafeAreaView>
   );

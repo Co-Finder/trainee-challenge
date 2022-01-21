@@ -1,6 +1,5 @@
 import React from "react";
-import { StyleSheet, StatusBar, Text, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { StyleSheet, View } from "react-native";
 import { Image } from "react-native";
 
 
@@ -15,12 +14,8 @@ export default function PhotoProfile() {
             height: 151,
             borderRadius: 11,
           }}
-          source={require("../Img/photo-pancake2-medium.png")}
+          source={{uri: 'https://github.com/Mar-io20.png'}}
         />
-        <View>
-          <Ionicons name="ios-heart-outline" size={24} color="black" />
-          <Ionicons name="ios-heart" size={24} color="black" />
-        </View>
       </View>
     </View>
   );
