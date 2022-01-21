@@ -8,7 +8,7 @@
     "splash": {
       "image": "./src/img/Onboarding-logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#fff"
+      "backgroundColor": "#FFE600"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
