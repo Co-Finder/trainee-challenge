@@ -7,6 +7,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: Platform.OS === "android" ? 10 : 0,
   },
+  input: {
+    fontSize: 15,
+    margin: 16,
+    paddingLeft: 58,
+    width: 327,
+    height: 56,
+    borderRadius: 32,
+    borderWidth: 0,
+    backgroundColor: "#F4F5F7",
+  },
   logo: {
     width: 267,
     height: 258.1,
@@ -22,17 +32,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 25,
     color: "#9FA5C0",
-  },
-  input: {
-    fontSize: 15,
-    lineHeight: 25,
-    margin: 10,
-    paddingLeft: 58,
-    width: 327,
-    height: 56,
-    borderRadius: 32,
-    borderWidth: 1,
-    borderColor: '#D0DBEA',
   },
 });
 

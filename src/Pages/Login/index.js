@@ -24,14 +24,12 @@ export default function Login(navegatin) {
         <Text style={styles.subtitle}>Please enter your account here</Text>
 
         <TextInput
-          pattern=".+"
           style={styles.input}
           placeholder="E-mail"
           keyboardType="email-address"
           onChangeText={(value) => setEmail(value)}
         />
         <TextInput
-          pattern=".+"
           style={styles.input}
           placeholder="Password"
           onChangeText={(value) => setPassword(value)}

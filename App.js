@@ -11,11 +11,12 @@ import Login from "./src/Pages/Login/index";
 import Home from "./src/Pages/Home";
 import Notifications from "./src/Pages/Notifications";
 import { NavigationContainer } from '@react-navigation/native';
+import HeaderTitle from "./src/Components/HeaderTitle";
 
 export default function App() {
   return (
      <View style={styles.container}>
-       <Login />
+       <Home />
      </View>
     
   );
