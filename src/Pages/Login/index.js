@@ -3,7 +3,7 @@ import { View, Image,   } from "react-native";
 import { Text, Input, Button } from "react-native-elements";
 import styles from "./styles"
 
-export default function Login() {
+export default function Login(navegatin) {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
