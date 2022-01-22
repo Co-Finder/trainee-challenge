@@ -5,21 +5,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFFF",
     alignItems: "center",
-    paddingTop: Platform.OS === "android" ? 40 : 0,
+    paddingTop: Platform.OS === "android" ? 0 : 0,
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: 267,
+    height: 258.1,
     borderRadius: 11,
+    margin: 5,
   },
   subtitle: {
     fontSize: 15,
     lineHeight: 25,
   },
-  buttonStyle: {
-    backgroundColor: "#1FCC79",
-    borderRadius: 5,
+  input: {
+    fontSize: 15,
+    lineHeight: 25,
+    width: 325,
+    height: 56,
   },
 });
 
-export default styles
+export default styles;

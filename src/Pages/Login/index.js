@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import { Image } from "react-native";
+import { View, Image,   } from "react-native";
 import { Text, Input, Button } from "react-native-elements";
 import styles from "./styles"
 
@@ -12,36 +10,30 @@ export default function Login() {
   const entrar = () => {
     console.log("entrou"); 
     console.log(email);
-    console.log(pass);
+    console.log(password);
   }
 
   return (
     <View style={styles.container}>
-      <Image 
-        style={{
-          width: 267,
-          height: 258.1,
-          borderRadius: 11,
-        }}
+      <Image style={styles.logo}
         source={require("../../Img/Onboarding-logo.png")}
       />
       <Text h1>Start Cooking</Text>
       <Text style={styles.subtitle}>Please enter your account here</Text>
+              
       <Input
         style={styles.input}
         placeholder="E-mail"
         keyboardType="email-address"
         onChangeText={(value) => setEmail(value)}
-        leftIcon={{ type: "font-awesome", name: "envelope-open" }}
-      />
+        leftIcon={{ type: "font-awesome", name: "envelope-open" }}/>
       <Input
         style={styles.input}
         placeholder="Password"
         onChangeText={(value) => setPassword(value)}
         leftIcon={{ type: "font-awesome", name: "lock" }}
         // rightIcon={{type: "font-awesome", name: "eye-slash"}}
-        secureTextEntry={true}
-      />
+        secureTextEntry={true}/>
 
       <Button
         style={styles.buttonStyle}
@@ -53,7 +45,11 @@ export default function Login() {
           marginHorizontal: 50,
           height: 50,
           width: 200,
-          marginVertical: 10,
+          marginVertical: 0,
+          borderRadius: 30,
+        }}
+        buttonStyle={{
+          backgroundColor: '#1FCC79',
         }}
         onPress={() => entrar()}
       />
