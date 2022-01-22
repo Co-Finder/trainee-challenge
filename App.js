@@ -8,16 +8,17 @@ import {
   View,
 } from "react-native";
 import Login from "./src/Pages/Login/index";
-import Home from "./src/Pages/Home"
+import Home from "./src/Pages/Home";
+import Notifications from "./src/Pages/Notifications";
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <StatusBar backgroundColor="#fff" barStyle="dark-content" />
-        <Home />
-      </ScrollView>
-    </SafeAreaView>
+    
+     <NavigationContainer>
+      <Notifications />
+    </NavigationContainer>
+    
   );
 }
 
