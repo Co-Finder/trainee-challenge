@@ -1,17 +1,26 @@
-import React from "react";
-import { View, Text, Image } from "react-native";
-import { Input, Icon } from "react-native-elements";
-import styles from "../../style/MainStyle"
+import React, { useState } from "react";
+import { SafeAreaView, View, Image, TextInput, ScrollView } from "react-native";
+import { Text, Input, Button } from "react-native-elements";
+import styles from "./styles";
 
 export default function Home() {
+  const [searchRecipes, setSearch] = useState();
+
+  const entrar = () => {
+    console.log("Pesquisou");
+    console.log(searchRecipes);
+  };
+
   return (
-    <View style={{backgroundColor: "#000",}}>
-      <Input
-        style={{ width: 350}}
-        placeholder="INPUT WITH ICON"
-        leftIcon={{ type: "font-awesome", name: "chevron-left" }}
-      />
-      
-    </View>
+    <ScrollView>
+      <SafeAreaView style={styles.container}>
+        <TextInput
+          style={styles.input}
+          placeholder="Rearch Recipes"
+          keyboardType="text"
+          onChangeText={(value) => setSearch(value)}
+        />
+      </SafeAreaView>
+    </ScrollView>
   );
 }

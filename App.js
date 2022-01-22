@@ -14,10 +14,9 @@ import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    
-     <NavigationContainer>
-      <Notifications />
-    </NavigationContainer>
+     <View style={styles.container}>
+       <Login />
+     </View>
     
   );
 }
