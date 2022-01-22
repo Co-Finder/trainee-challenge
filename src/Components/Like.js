@@ -20,12 +20,7 @@ export default function Like() {
         <Text>Calum Lewis</Text>
       </View>
       <View>
-        <Image
-          style={{
-            width: 151,
-            height: 151,
-            borderRadius: 11,
-          }}
+        <Image style={styles.logo}
           source={require("../Img/photo-pancake2-medium.png")}
         />
         <View>
@@ -44,5 +39,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: Platform.OS === "android" ? 40 : 0,
   },
-  RecipeCard: {},
+  logo: {
+    width: 150,
+    height: 150,
+    borderRadius: 11,
+
+  },
 });
