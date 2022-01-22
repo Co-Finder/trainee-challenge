@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Image } from "react-native";
 import { Text, Input, Button } from "react-native-elements";
+import styles from "./styles"
 
 export default function Login() {
   const [email, setEmail] = useState(null);
@@ -11,7 +12,7 @@ export default function Login() {
   const entrar = () => {
     console.log("entrou"); 
     console.log(email);
-    console.log(password);
+    console.log(pass);
   }
 
   return (
@@ -60,27 +61,3 @@ export default function Login() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#FFFFFF",
-    alignItems: "center",
-    paddingTop: Platform.OS === "android" ? 40 : 0,
-  },
-  logo: {
-    width: 150,
-    height: 150,
-    borderRadius: 11,
-  },
-  subtitle: {
-    // fontFamily: Inter,
-    // fontStyle: normal,
-    // fontWeight: 500,
-    fontSize: 15,
-    lineHeight: 25,
-  },
-  buttonStyle: {
-    backgroundColor: "#1FCC79",
-    borderRadius: 5,
-  },
-});
