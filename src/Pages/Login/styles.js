@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
     width: 267,
     height: 258.1,
     borderRadius: 11,
-    margin: 5,
+    margin: 0,
+    marginTop: 50,
   },
   title:{
     fontSize: 22,

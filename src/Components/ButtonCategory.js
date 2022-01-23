@@ -14,16 +14,18 @@ export default ButtonCategory;
 
 const styles = StyleSheet.create({
   button: {
-    
     backgroundColor: "#1FCC79",
     width: 68,
     height: 48,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 32,
+    marginRight: 16,
+    marginTop: 24,
   },
   title:{
-    color: "#fff",
-    fontWeight: "bold",
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: "#fff"
   }
 });
