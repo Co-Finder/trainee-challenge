@@ -17,10 +17,12 @@ const styles = StyleSheet.create({
   },
   containeRow:{
     flexDirection: 'row',
+
   }, 
   containerRecipes: {
     marginLeft: 16,
-  }
+
+  },
 });
 
 export default styles;

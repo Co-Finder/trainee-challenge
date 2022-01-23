@@ -1,0 +1,57 @@
+import React from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
+import TextTitle from "./TextTitle";
+
+export default function RecipesCard() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.containeRow}>
+        <View style={styles.containerRecipesCards}>
+          <View style={styles.postTitle}>
+            <Image
+              style={styles.imageProfile}
+              source={require(`../Img/profile-picture-man-little.png`)}
+            />
+            <Text style={styles.nameProfile}>Calum Lewis</Text>
+          </View>
+
+          <Image
+            style={styles.imagePost}
+            source={require("../Img/photo-pancake-medium.png")}
+          />
+          {/* <Like style={styles.like}/> */}
+          <TextTitle labelButton="Pancake" />
+        </View>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  containerRecipesCards: {
+    marginTop: 24,
+  },
+  postTitle: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 16,
+  },
+  nameProfile: {
+    fontSize: 14,
+    fontWeight: "normal",
+    color: "#3E5481",
+  },
+  imageProfile: {
+    borderRadius: 11,
+    marginRight: 9,
+  },
+  imagePost: {
+    borderRadius: 16,
+    marginBottom: 23,
+  },
+  like: {
+    margin: 33,
+    position: "absolute",
+  },
+});

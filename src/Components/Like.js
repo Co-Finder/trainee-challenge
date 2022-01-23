@@ -1,48 +1,26 @@
 import React from "react";
-import { StyleSheet, StatusBar, Text, View } from "react-native";
+import { StyleSheet, StatusBar, Text, View, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { Image } from "react-native";
-
-
 
 export default function Like() {
   return (
     <View style={styles.container}>
-      <View>
-        <Image
-          style={{
-            width: 31,
-            height: 31,
-            borderRadius: 11,
-          }}
-          source={require("../Img/profile-picture-man-little.png")}
-        />
-        <Text>Calum Lewis</Text>
-      </View>
-      <View>
-        <Image style={styles.logo}
-          source={require("../Img/photo-pancake2-medium.png")}
-        />
-        <View>
-          <Ionicons name="ios-heart-outline" size={24} color="black" />
-          <Ionicons name="ios-heart" size={24} color="black" />
-        </View>
-      </View>
+      <Image
+        style={styles.imageProfile}
+        source={require(`../Img/Heart.png`)}
+      />
+      <Image
+        style={styles.imageProfile}
+        source={require(`../Img/HeartLight.png`)}
+      />   
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#FFFFFF",
-    alignItems: "center",
-    paddingTop: Platform.OS === "android" ? 40 : 0,
-  },
   logo: {
     width: 150,
     height: 150,
     borderRadius: 11,
-
   },
 });
