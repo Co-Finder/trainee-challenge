@@ -3,44 +3,23 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import HomeScreen from './Home/HomeScreen';
+import Notifications from './Notifications';
+import Profile from './Profile';
 
-function Feed() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed!</Text>
-    </View>
-  );
-}
-
-function Profile() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Profile!</Text>
-    </View>
-  );
-}
-
-function Notifications() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications!</Text>
-    </View>
-  );
-}
 
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+export default function Main() {
   return (
     <Tab.Navigator
-      initialRouteName="Feed"
       screenOptions={{
-        tabBarActiveTintColor: '#e91e63',
+        tabBarActiveTintColor: '#1FCC79',  
       }}
     >
       <Tab.Screen
         name="Feed"
-        component={Feed}
+        component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (
@@ -52,7 +31,7 @@ function MyTabs() {
         name="Notifications"
         component={Notifications}
         options={{
-          tabBarLabel: 'Updates',
+          tabBarLabel: 'Notification',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bell" color={color} size={size} />
           ),
@@ -69,13 +48,5 @@ function MyTabs() {
         }}
       />
     </Tab.Navigator>
-  );
-}
-
-export default function Main() {
-  return (
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
   );
 }

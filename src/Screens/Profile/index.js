@@ -1,11 +1,10 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
-import styles from "./styles";
+import { View, Text } from "react-native";
 
-export default function Perfil() {
+export default function Profile() {
   return (
-    <View>
-      <Text>Essa pagina ainda não foi desenvolvida</Text>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Under development...</Text>
     </View>
   );
 }

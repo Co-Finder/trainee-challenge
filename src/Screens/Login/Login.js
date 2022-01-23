@@ -7,10 +7,10 @@ export default function Login({ navigation }) {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
-  const entrar = () => {
+  const cameIn = () => {
     navigation.reset({
-      index: 0,
-      routes: [{ name: "HomeScreen" }],
+      index: 1,
+      routes: [{ name: "Main" }],
     });
   };
 
@@ -51,7 +51,7 @@ export default function Login({ navigation }) {
           buttonStyle={{
             backgroundColor: "#1FCC79",
           }}
-          onPress={() => entrar()}
+          onPress={() => cameIn()}
         />
       </SafeAreaView>
     </ScrollView>

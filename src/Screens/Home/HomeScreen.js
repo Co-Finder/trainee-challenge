@@ -17,11 +17,6 @@ import RecipesCard from "../../Components/RecipesCard";
 export default function HomeScreen() {
   const [searchRecipes, setSearch] = useState();
 
-  const entrar = () => {
-    console.log("Pesquisou");
-    console.log(searchRecipes);
-  };
-
   const signIg = () => {
     alert("Ainda não temos postagens");
   };

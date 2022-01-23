@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingTop: Platform.OS === "android" ? 30 : 0,
   },
-  containerView:{
+  containerView: {
     backgroundColor: "#fff",
   },
   logo: {
@@ -18,10 +18,10 @@ const styles = StyleSheet.create({
     margin: 0,
     marginTop: 50,
   },
-  title:{
+  title: {
     fontSize: 22,
-    fontWeight: 'bold',
-    color: "#2E3E5C"
+    fontWeight: "bold",
+    color: "#2E3E5C",
   },
   subtitle: {
     fontSize: 15,
@@ -37,8 +37,7 @@ const styles = StyleSheet.create({
     height: 56,
     borderRadius: 32,
     borderWidth: 1,
-    borderColor: '#D0DBEA',
-    
+    borderColor: "#D0DBEA",
   },
 });
 
