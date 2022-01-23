@@ -14,7 +14,7 @@ export default function Login(navegatin) {
   };
 
   return (
-    <ScrollView>
+    <ScrollView style={{ marginBottom: 33 }}>
       <SafeAreaView style={styles.container}>
         <Image
           style={styles.logo}

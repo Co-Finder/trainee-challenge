@@ -13,15 +13,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#F4F5F7",
   },
   containeCategry:{
-    paddingLeft: 24, 
+    paddingLeft: 24,
+    paddingRight: 24,
   },
   containeRow:{
     flexDirection: 'row',
-
+    justifyContent: 'space-between',
   }, 
   containerRecipes: {
-    marginLeft: 16,
-
+    paddingLeft: 24,
+    paddingRight: 24,
   },
 });
 

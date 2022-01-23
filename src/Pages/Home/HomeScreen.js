@@ -14,7 +14,7 @@ import Spacing from "../../Components/Spacing";
 import Like from "../../Components/Like";
 import RecipesCard from "../../Components/RecipesCard";
 
-export default function Home() {
+export default function HomeScreen() {
   const [searchRecipes, setSearch] = useState();
 
   const entrar = () => {
@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: '#FFF'}}>
       <TextInput
         style={styles.input}
         placeholder="Search Recipe"
@@ -39,6 +39,7 @@ export default function Home() {
           <ButtonCategory labelButton="All" onpress={signIg} />
           <ButtonCategory labelButton="Food" onpress={signIg} />
           <ButtonCategory labelButton="Drink" onpress={signIg} />
+          <ButtonCategory labelButton="candy" onpress={signIg} />
         </View>
       </View>
 
@@ -46,8 +47,17 @@ export default function Home() {
 
       <SafeAreaView style={styles.containerRecipes}>
         <TextTitle labelButton="Recipes" />
-        <RecipesCard />
+        <View style={styles.containeRow}>
+          <RecipesCard />
+          <RecipesCard />
+        </View>
+        <View style={styles.containeRow}>
+          <RecipesCard />
+          <RecipesCard />
+        </View>
+
       </SafeAreaView>
     </ScrollView>
   );
 }
+
