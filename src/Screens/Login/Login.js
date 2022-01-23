@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { SafeAreaView, View, Image, TextInput, ScrollView } from "react-native";
-import { Text, Input, Button } from "react-native-elements";
+import { Text, Input, Button, Icon } from "react-native-elements";
 import styles from "./styles";
 
-export default function Login({navigation}) {
+export default function Login({ navigation }) {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
-  const entrar = () => { 
+  const entrar = () => {
     navigation.reset({
       index: 0,
-      routes: [{name: 'HomeScreen'}]
-    })
+      routes: [{ name: "HomeScreen" }],
+    });
   };
 
-  return ( 
+  return (
+    <ScrollView style={styles.containerView}>
       <SafeAreaView style={styles.container}>
         <Image
           style={styles.logo}
@@ -27,6 +28,8 @@ export default function Login({navigation}) {
           style={styles.input}
           placeholder="E-mail"
           keyboardType="email-address"
+          // onSubmitEditing={}
+          leftIcon={{ type: "font-awesome", name: "envelope" }}
           onChangeText={(value) => setEmail(value)}
         />
         <TextInput
@@ -51,5 +54,6 @@ export default function Login({navigation}) {
           onPress={() => entrar()}
         />
       </SafeAreaView>
+    </ScrollView>
   );
 }

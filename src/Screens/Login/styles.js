@@ -5,7 +5,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFFF",
     alignItems: "center",
-    paddingTop: Platform.OS === "android" ? 10 : 0,
+    justifyContent: "center",
+    paddingTop: Platform.OS === "android" ? 30 : 0,
+  },
+  containerView:{
+    backgroundColor: "#fff",
   },
   logo: {
     width: 267,
@@ -34,6 +38,7 @@ const styles = StyleSheet.create({
     borderRadius: 32,
     borderWidth: 1,
     borderColor: '#D0DBEA',
+    
   },
 });
 

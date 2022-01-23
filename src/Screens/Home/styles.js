@@ -1,6 +1,16 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: Platform.OS === "android" ? 30 : 0,
+  },  
+  containerScrolView:{
+    backgroundColor: "#FFFFFF",
+  },
   input: {
     fontSize: 15,
     margin: 16,
@@ -20,10 +30,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   }, 
-  containerRecipes: {
-    paddingLeft: 24,
-    paddingRight: 24,
-  },
+  
 });
 
 export default styles;

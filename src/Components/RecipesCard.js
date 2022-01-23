@@ -4,32 +4,30 @@ import TextTitle from "./TextTitle";
 
 export default function RecipesCard() {
   return (
-    <View style={styles.container}>
-      <View style={styles.containeRow}>
-        <View style={styles.containerRecipesCards}>
-          <View style={styles.postTitle}>
-            <Image
-              style={styles.imageProfile}
-              source={require(`../Img/profile-picture-man-little.png`)}
-            />
-            <Text style={styles.nameProfile}>Calum Lewis</Text>
-          </View>
-
-          <Image
-            style={styles.imagePost}
-            source={require("../Img/photo-pancake-medium.png")}
-          />
-          {/* <Like style={styles.like}/> */}
-          <TextTitle labelButton="Pancake" />
-        </View>
+    <View style={styles.containerRecipesCards}>
+      <View style={styles.postTitle}>
+        <Image
+          style={styles.imageProfile}
+          source={require(`../Img/profile-picture-man-little.png`)}
+        />
+        <Text style={styles.nameProfile}>Calum Lewis</Text>
       </View>
+
+      <Image
+        style={styles.imagePost}
+        source={require("../Img/photo-pancake-medium.png")}
+      />
+      {/* <Like style={styles.like}/> */}
+      <TextTitle labelButton="Pancake" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   containerRecipesCards: {
-    marginTop: 24,
+    margin: 24,
+    marginLeft: 10,
+    marginRight: 10,
   },
   postTitle: {
     display: "flex",

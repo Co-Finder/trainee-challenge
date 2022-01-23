@@ -61,14 +61,12 @@ function MyStack() {
   return (
     <Stack.Navigator
     screenOptions={{
-        
+      headerShown: false,
         headerTintColor: 'white',
-        headerStyle: { backgroundColor: 'white' },
-      }}
-    >
+        headerStyle: { backgroundColor: '#232323' },
+      }}>
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      {/* <Stack.Screen name="Notifications" component={Notifications} /> */}
     </Stack.Navigator>
   );
 }
