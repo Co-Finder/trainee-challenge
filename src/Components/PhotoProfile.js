@@ -10,8 +10,8 @@ export default function PhotoProfile() {
       <View>
         <Image
           style={{
-            width: 151,
-            height: 151,
+            width: 150,
+            height: 150,
             borderRadius: 11,
           }}
           source={{uri: 'https://github.com/Mar-io20.png'}}

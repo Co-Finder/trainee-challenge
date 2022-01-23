@@ -1,25 +1,82 @@
-import React from "react";
-import { StyleSheet, ScrollView, SafeAreaView, StatusBar, Text, View } from "react-native";
-import Like from './src/Components/Like'
-import PhotoProfile from "./src/Components/PhotoProfile";
+// import * as React from "react";
+// import { Text, View } from "react-native";
+// import { NavigationContainer } from "@react-navigation/native";
+// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default function App() {
+// import Login from "./src/Screens/Login/Login";
+// import HomeScreen from "./src/Screens/Home/HomeScreen";
+// import Notifications from "./src/Screens/Notifications";
+
+
+// const Tab = createBottomTabNavigator();
+
+// function MyTabs() {
+//   return (
+//     <Tab.Navigator>
+//       <Tab.Screen
+//         name="Login"
+//         component={Login}
+//         options={{
+//           tabBarLabel: "Login",
+//           tabBarIcon: ({ color, size }) => (
+//             <MaterialCommunityIcons name="account" color={color} size={size} />
+//           ),
+//         }}
+//       />
+//       <Tab.Screen
+//         name="Home"
+//         component={HomeScreen}
+//         options={{
+//           tabBarLabel: "Home",
+//           tabBarIcon: ({ color, size }) => (
+//             <MaterialCommunityIcons name="home" color={color} size={size} />
+//           ),
+//         }}
+//       />
+//     </Tab.Navigator>
+//   );
+// }
+
+// export default function App() {
+//   return (
+//     <NavigationContainer>
+//       <MyTabs />
+//     </NavigationContainer>
+//   );
+// }
+
+import * as React from "react";
+import { Text, View } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import Login from "./src/Screens/Login/Login";
+import HomeScreen from "./src/Screens/Home/HomeScreen";
+
+
+const Stack = createNativeStackNavigator();
+
+function MyStack() {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <StatusBar backgroundColor="#fff" barStyle="dark-content" />
-        <Like />
-        <PhotoProfile />
-      </ScrollView>
-    </SafeAreaView>
+    <Stack.Navigator
+    screenOptions={{
+        
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'white' },
+      }}
+    >
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      {/* <Stack.Screen name="Notifications" component={Notifications} /> */}
+    </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#FFFFFF",
-    alignItems: "center",
-    paddingTop: Platform.OS === "android" ? 40 : 0,
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+  );
+}
