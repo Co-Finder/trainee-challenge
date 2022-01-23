@@ -3,18 +3,18 @@ import { SafeAreaView, View, Image, TextInput, ScrollView } from "react-native";
 import { Text, Input, Button } from "react-native-elements";
 import styles from "./styles";
 
-export default function Login(navegatin) {
+export default function Login({navigation}) {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
-  const entrar = () => {
-    console.log("entrou");
-    console.log(email);
-    console.log(password);
+  const entrar = () => { 
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'HomeScreen'}]
+    })
   };
 
-  return (
-    <ScrollView style={{ marginBottom: 33 }}>
+  return ( 
       <SafeAreaView style={styles.container}>
         <Image
           style={styles.logo}
@@ -51,6 +51,5 @@ export default function Login(navegatin) {
           onPress={() => entrar()}
         />
       </SafeAreaView>
-    </ScrollView>
   );
 }
