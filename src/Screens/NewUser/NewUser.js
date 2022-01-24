@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-export default function RecipeDetails() {
+export default function NewUser() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Under development...</Text>
+      <Text>Subscribe...</Text>
     </View>
   );
 }
