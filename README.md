@@ -44,6 +44,7 @@ $ https://github.com/Mar-io20/trainee-challenge.git
 
 ```bash
 # enter the folder trainee-challenge
+cd trainee-challenge
 ```
 
 ```bash
@@ -55,3 +56,5 @@ $ yarn install
 # run
 $ yarn start
 ```
+
+Go to <http://localhost:3000> to see the result.
