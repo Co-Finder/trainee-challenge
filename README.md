@@ -30,3 +30,28 @@ You should Fork this repository to your account.
 Once you are done, please open a Pull Request.
 
 😎🚀
+<h1 align="center">Trainee Challenge
+</h1>
+
+## how to run
+
+To install project follow these steps:
+
+```bash
+# Clone the Repositório
+$ https://github.com/Mar-io20/trainee-challenge.git
+```
+
+```bash
+# enter the folder trainee-challenge
+```
+
+```bash
+# download dependencies
+$ yarn install
+```
+
+```bash
+# run
+$ yarn start
+```
