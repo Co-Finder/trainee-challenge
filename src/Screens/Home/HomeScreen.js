@@ -44,7 +44,7 @@ export default function HomeScreen() {
         <SafeAreaView>
           <TextTitle labelButton="Recipes" />
           <View style={styles.containeRow}>
-            <RecipesCard />
+            <RecipesCard URL="../Img/profile-picture-man-little.png"/>
             <RecipesCard />
           </View>
           <View style={styles.containeRow}>

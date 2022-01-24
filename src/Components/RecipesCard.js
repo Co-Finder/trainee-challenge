@@ -2,13 +2,15 @@ import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import TextTitle from "./TextTitle";
 
+const URL = "../Img/profile-picture-man-little.png"
+
 export default function RecipesCard() {
   return (
     <View style={styles.containerRecipesCards}>
       <View style={styles.postTitle}>
         <Image
           style={styles.imageProfile}
-          source={require(`../Img/profile-picture-man-little.png`)}
+          source={require(URL)}
         />
         <Text style={styles.nameProfile}>Calum Lewis</Text>
       </View>
