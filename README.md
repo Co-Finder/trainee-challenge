@@ -39,7 +39,7 @@ To install project follow these steps:
 
 ```bash
 # Clone the Repositório
-$ https://github.com/Mar-io20/trainee-challenge.git
+$ git clone https://github.com/Mar-io20/trainee-challenge.git
 ```
 
 ```bash
