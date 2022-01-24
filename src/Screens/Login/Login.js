@@ -78,11 +78,11 @@ export default function Login({ navigation }) {
 
       {email === "" || password === "" ? (
         <TouchableOpacity disabled={true} style={styles.buttonLogin}>
-          <Text style={styles.TextButtonLogin} onPress={() => cameIn()}>Login</Text>
+          <Text style={styles.TextButtonLogin}>Login</Text>
         </TouchableOpacity>
       ) : (
         <TouchableOpacity style={styles.buttonLogin}>
-          <Text style={styles.TextButtonLogin}>Login</Text>
+          <Text style={styles.TextButtonLogin} onPress={() => cameIn()}>Login</Text>
         </TouchableOpacity>
       )}
       <Text style={styles.registration}> dont't have a registration?</Text>
