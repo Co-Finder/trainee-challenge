@@ -37,13 +37,14 @@ const styles = StyleSheet.create({
     lineHeight: 25,
     color: "#9FA5C0",
   },
-  buttonLogin: {
+  button: {
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#1FCC79",
+    marginBottom: 10,
     width: 327,
     height: 50,
     borderRadius: 30,
-    backgroundColor: "#1FCC79",
   },
   TextButtonLogin: {
     fontWeight: "bold",
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
   registration: {
     marginTop: 20,
     color: "#4d5156"
-  },  
+  },
   linkSubscrybe: {
     color: "#1877f2",
     fontSize: 16,
