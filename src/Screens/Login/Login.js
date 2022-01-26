@@ -36,16 +36,16 @@ export default function Login({ navigation }) {
     });
   };
 
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        console.log("Logged" + user.uid);
-        cameIn();
-      } else {
-        console.log("not logged in");
-      }
-    });
-  });
+  // useEffect(() => {
+  //   firebase.auth().onAuthStateChanged(function (user) {
+  //     if (user) {
+  //       console.log("Logged" + user.uid);
+  //       cameIn();
+  //     } else {
+  //       console.log("not logged in");
+  //     }
+  //   });
+  // });
 
   return (
     <KeyboardAvoidingView style={styles.container}>

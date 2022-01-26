@@ -9,10 +9,16 @@ export default function NewUser({navigation}) {
   const [errorLoaging, setErrorLoaging] = useState('');
 
 
-  const cameIn = () => {
+  const CameInNot = () => {
     navigation.reset({
       index: 0,
       routes: [{ name: "Login" }],
+    });
+  };
+  const cameIn = () => {
+    navigation.reset({
+      index: 1,
+      routes: [{ name: "HomeScreen" }],
     });
   };
 
@@ -20,6 +26,7 @@ export default function NewUser({navigation}) {
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
       let errorCode = error.code;
       let errorMessage = error.message;
+      cameIn
       // alert(errorCode, "Codigo test");
     });
   }
@@ -40,7 +47,7 @@ export default function NewUser({navigation}) {
           <Text>Subscribe...</Text>
         </TouchableOpacity>
 
-        <Text onPress={()=>{ cameIn()}}>Já tenho Login</Text>
+        <Text onPress={()=>{ CameInNot()}}>Já tenho Login</Text>
       </View>
     </SafeAreaView>
   );

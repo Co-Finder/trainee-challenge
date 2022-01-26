@@ -1,7 +1,7 @@
 import firebase from "firebase";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyAr0GICqE1qYvJ0OKxPUZgGHWIVZcsVHxw",
+  apiKey: "",
   authDomain: "trainee-challinge.firebaseapp.com",
   projectId: "trainee-challinge",
   storageBucket: "trainee-challinge.appspot.com",
