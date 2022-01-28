@@ -3,12 +3,15 @@ import { TouchableOpacity, StyleSheet, Text } from "react-native";
 
 
 const ButtonCategory = ({ labelButton, onpress }) => {
+
+  
   return (
     <TouchableOpacity style={styles.button} onPress={onpress}>
       <Text style={styles.title}>{labelButton}</Text>
     </TouchableOpacity>
   );
 };
+
 
 export default ButtonCategory;
 
