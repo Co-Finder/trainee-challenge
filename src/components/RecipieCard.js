@@ -1,5 +1,11 @@
 import React from "react";
-import { StyleSheet, View, Image, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  Dimensions,
+  TouchableWithoutFeedback,
+} from "react-native";
 import { MaterialIcon } from "./Icon";
 import colors from "../config/colors";
 import AppText from "../components/AppText";
@@ -14,24 +20,27 @@ export default function RecipesCard({
   foodTitle,
   category,
   weight,
+  onPress,
 }) {
   return (
-    <View style={styles.containerRecipesCards}>
-      <View style={styles.profileContainer}>
-        <Image style={styles.imageProfile} source={profileImg} />
-        <AppText style={styles.nameProfile}>{profileName}</AppText>
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.containerRecipesCards}>
+        <View style={styles.profileContainer}>
+          <Image style={styles.imageProfile} source={profileImg} />
+          <AppText style={styles.nameProfile}>{profileName}</AppText>
+        </View>
+        <Image resizeMode="cover" style={styles.image} source={foodImg} />
+        <View style={styles.like}>
+          <MaterialIcon color={colors.white} size={"large"} name={"heart"} />
+        </View>
+        <AppText style={styles.foodTitle}>{foodTitle}</AppText>
+        <View style={styles.categoryContainer}>
+          <AppText style={styles.text}>{category}</AppText>
+          <View style={styles.dot} />
+          <AppText style={styles.text}>{weight}</AppText>
+        </View>
       </View>
-      <Image resizeMode="cover" style={styles.image} source={foodImg} />
-      <View style={styles.like}>
-        <MaterialIcon color={colors.white} size={"large"} name={"heart"} />
-      </View>
-      <AppText style={styles.foodTitle}>{foodTitle}</AppText>
-      <View style={styles.categoryContainer}>
-        <AppText style={styles.text}>{category}</AppText>
-        <View style={styles.dot} />
-        <AppText style={styles.text}>{weight}</AppText>
-      </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 }
 

@@ -47,7 +47,7 @@ const RecipieDetailsData = [
   },
 ];
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [activeKey, setActiveKey] = useState("All");
 
   const handleActive = (key) => {
@@ -95,6 +95,7 @@ const Home = () => {
               profileName={item.profileName}
               category={item.category}
               weight={item.weight}
+              onPress={() => navigation.navigate("RecipieDetails")}
             />
           )}
           keyExtractor={(item, index) => index * Math.random(55)}
