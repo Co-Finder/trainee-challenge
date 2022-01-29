@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Image, View, ImageBackground, Text } from "react-native";
+import {
+  StyleSheet,
+  Image,
+  View,
+  ImageBackground,
+  Text,
+  KeyboardAvoidingView,
+} from "react-native";
 import * as Yup from "yup";
 
 import Screen from "../../components/Screen";
@@ -12,52 +19,61 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required().min(4).label("Password"),
 });
 
-function LoginScreen(props) {
+function LoginScreen({ navigation }) {
   return (
     <Screen style={styles.container}>
-      <View style={styles.imgContainer}>
-        <ImageBackground
-          style={styles.bgImg}
-          source={require("../../assets/Onboarding.jpg")}
-        />
-      </View>
-      <View style={styles.formContainer}>
-        <AppText style={styles.title}>Start Cooking</AppText>
-        <AppText style={styles.subText}>Please enter your account here</AppText>
-        <AppForm
-          initialValues={{ username: "", password: "" }}
-          onSubmit={(values) => console.log(values)}
-          validationSchema={validationSchema}
-        >
-          <AppFormField
-            style={styles.inpt}
-            autoCapitalize="none"
-            autoCorrect={false}
-            icon="mail"
-            name="username"
-            placeholder="Username"
-            // textContentType=""
+      <KeyboardAvoidingView style={styles.imgContainer}>
+        <View style={styles.imgContainer}>
+          <ImageBackground
+            style={styles.bgImg}
+            source={require("../../assets/Onboarding.jpg")}
           />
-          <AppFormField
-            style={styles.inpt}
-            autoCapitalize="none"
-            autoCorrect={false}
-            icon="lock"
-            name="password"
-            placeholder="Password"
-            secureTextEntry
-            textContentType="password"
-          />
-          <SubmitButton style={styles.buttonContainer} title="Login" />
-        </AppForm>
-      </View>
+        </View>
+        <View style={styles.formContainer}>
+          <AppText style={styles.title}>Start Cooking</AppText>
+          <AppText style={styles.subText}>
+            Please enter your account here
+          </AppText>
+          <AppForm
+            initialValues={{ username: "", password: "" }}
+            onSubmit={(values) => navigation.navigate("TabNavigation")}
+            validationSchema={validationSchema}
+          >
+            <AppFormField
+              style={styles.inpt}
+              autoCapitalize="none"
+              autoCorrect={false}
+              icon="mail"
+              name="username"
+              placeholder="Username"
+              // textContentType=""
+            />
+            <AppFormField
+              style={styles.inpt}
+              autoCapitalize="none"
+              autoCorrect={false}
+              icon="lock"
+              name="password"
+              placeholder="Password"
+              secureTextEntry
+              textContentType="password"
+            />
+            <SubmitButton
+              style={styles.buttonContainer}
+              title="Login"
+              // onPress={() => navigation.navigate("TabNavigation")}
+            />
+          </AppForm>
+        </View>
+      </KeyboardAvoidingView>
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 5,
+    paddingHorizontal: 5,
+    backgroundColor: colors.white,
   },
   imgContainer: {
     flex: 1,

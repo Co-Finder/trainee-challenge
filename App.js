@@ -1,6 +1,10 @@
 import React from "react";
 
-import LoginScreen from "./src/screens/Home";
+import Navigation from "./src/routes";
+import { NavigationContainer } from "@react-navigation/native";
 
-export const App = () => <LoginScreen />;
-
+export const App = () => (
+  <NavigationContainer>
+    <Navigation />
+  </NavigationContainer>
+);
