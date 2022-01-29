@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, StyleSheet, FlatList,KeyboardAvoidingView } from "react-native";
 import React, { useState } from "react";
 import Screen from "../../components/Screen";
 import SearchBar from "../../components/SearchBar";
@@ -38,6 +38,8 @@ const Home = () => {
   };
 
   return (
+    // <KeyboardAvoidingView>
+
     <Screen style={styles.container}>
       <View style={styles.filterContainer}>
         <SearchBar placeholder={"pancake"} />
@@ -82,6 +84,8 @@ const Home = () => {
         keyExtractor={(item, index) => index * Math.random(55)}
       />
     </Screen>
+    // {/* </KeyboardAvoidingView> */}
+
   );
 };
 

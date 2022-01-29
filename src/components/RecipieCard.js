@@ -3,6 +3,7 @@ import { StyleSheet, View, Image, Dimensions } from "react-native";
 import { MaterialIcon } from "./Icon";
 import colors from "../config/colors";
 import AppText from "../components/AppText";
+import { BlurView } from "@react-native-community/blur";
 
 const { width } = Dimensions.get("screen");
 const CardWidth = width / 2 - 20;
@@ -23,6 +24,12 @@ export default function RecipesCard({
       </View>
       <Image resizeMode="cover" style={styles.image} source={foodImg} />
       <View style={styles.like}>
+        <BlurView
+          style={styles.absolute}
+          blurType="light"
+          blurAmount={10}
+          reducedTransparencyFallbackColor="white"
+        />
         <MaterialIcon color={colors.primary} size={"large"} name={"heart"} />
       </View>
       <AppText style={styles.foodTitle}>{foodTitle}</AppText>
@@ -71,6 +78,13 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     justifyContent: "center",
     alignItems: "center",
+  },
+  absolute: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
   },
   foodTitle: {
     fontWeight: "bold",

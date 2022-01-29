@@ -137,7 +137,7 @@ ADDED from /home/dennis/Desktop/learning/reactnative/trainee-challenge/android/a
 	android:launchMode
 		ADDED from /home/dennis/Desktop/learning/reactnative/trainee-challenge/android/app/src/main/AndroidManifest.xml:17:9-40
 	android:windowSoftInputMode
-		ADDED from /home/dennis/Desktop/learning/reactnative/trainee-challenge/android/app/src/main/AndroidManifest.xml:18:9-51
+		ADDED from /home/dennis/Desktop/learning/reactnative/trainee-challenge/android/app/src/main/AndroidManifest.xml:18:9-48
 	android:configChanges
 		ADDED from /home/dennis/Desktop/learning/reactnative/trainee-challenge/android/app/src/main/AndroidManifest.xml:16:9-86
 	android:name
