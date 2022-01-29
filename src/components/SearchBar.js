@@ -1,17 +1,18 @@
 import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
-import colors from "../Config/colors";
+import colors from "../config/colors";
 import { MaterialIcon } from "./Icon";
 
 const SearchBar = ({ onPress, value, placeholder }) => {
   return (
     <View style={styles.InputContainer}>
       <View style={styles.iconBox}>
-        <MaterialIcon size="large" color="#000000" name="search1" />
+        <MaterialIcon size="large" color={colors.dark} name="search1" />
       </View>
       <TextInput
         style={styles.input}
         placeholder={placeholder}
+        placeholderTextColor={colors.secondary}
         onChangeText={onPress}
         value={value}
       />
@@ -25,10 +26,11 @@ const styles = StyleSheet.create({
   InputContainer: {
     flexDirection: "row",
     width: "100%",
-    borderColor: colors.grey,
-    borderWidth: 1.5,
+    // borderColor: colors.grey,
+    // borderWidth: 1.5,
     borderRadius: 40,
-    backgroundColor: colors.white,
+    backgroundColor: "#F4F5F7",
+    paddingVertical: 5,
   },
   iconBox: {
     width: "10%",

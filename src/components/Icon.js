@@ -13,6 +13,6 @@ export const IconSizes = {
 export const MaterialIcon = ({ size, name, color }) => (
   <Icon name={name} size={IconSizes[size]} color={color} />
 );
-export const Icon = ({ size, name, color }) => (
+export const Ico = ({ size, name, color }) => (
   <Icon name={name} size={IconSizes[size]} color={color} />
 );
