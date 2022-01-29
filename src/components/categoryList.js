@@ -30,7 +30,7 @@ export default OptionsList;
 const styles = StyleSheet.create({
   textBox: {
     height: 40,
-    paddingHorizontal: 20,
+    paddingHorizontal: 30,
     paddingVertical: 10,
     borderRadius: 20,
     alignSelf: "center",
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
   },
   inactive: {
-    backgroundColor: "#F4F5F7",
+    backgroundColor: colors.greySecondary,
   },
   colorActive: {
     color: colors.white,

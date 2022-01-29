@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => (
   <Tab.Navigator
-    tabBarOptions={{
+    screenOptions={{
       activeTintColor: `${colors.primary}`,
       inactiveTintColor: `${colors.grey}`,
       keyboardHidesTabBar: true,

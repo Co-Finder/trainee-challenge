@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     // borderColor: colors.grey,
     // borderWidth: 1.5,
     borderRadius: 40,
-    backgroundColor: "#F4F5F7",
+    backgroundColor: colors.greySecondary,
     paddingVertical: 5,
   },
   iconBox: {
