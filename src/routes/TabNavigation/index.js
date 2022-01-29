@@ -12,10 +12,9 @@ const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => (
   <Tab.Navigator
-    tabBarOptions={{
-      activeTintColor: `${colors.primary}`,
-      inactiveTintColor: `${colors.grey}`,
-      keyboardHidesTabBar: true,
+    screenOptions={{
+      tabBarActiveTintColor: `${colors.primary}`,
+      headerShown: false,
     }}
   >
     <Tab.Screen

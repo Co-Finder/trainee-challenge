@@ -31,21 +31,23 @@ const Notification = () => {
   return (
     <Screen style={styles.container}>
       <AppText style={styles.date}>Today</AppText>
-      {data.map(({ notificationDescription, notificationTitle, time }) => (
-        <View style={styles.notification}>
-          <Image source={require("../../assets/profile.png")} />
-          <View style={styles.notificationContainer}>
-            <AppText style={styles.text}>{notificationTitle}</AppText>
-            <View style={styles.notificationDescription}>
-              <AppText style={styles.notificationContent}>
-                {notificationDescription}{" "}
-              </AppText>
-              <View style={styles.dot} />
-              <AppText style={styles.notificationContent}>{time}</AppText>
+      {data.map(
+        ({ notificationDescription, notificationTitle, time }, index) => (
+          <View key={index * Math.random(30)} style={styles.notification}>
+            <Image source={require("../../assets/profile.png")} />
+            <View style={styles.notificationContainer}>
+              <AppText style={styles.text}>{notificationTitle}</AppText>
+              <View style={styles.notificationDescription}>
+                <AppText style={styles.notificationContent}>
+                  {notificationDescription}{" "}
+                </AppText>
+                <View style={styles.dot} />
+                <AppText style={styles.notificationContent}>{time}</AppText>
+              </View>
             </View>
           </View>
-        </View>
-      ))}
+        )
+      )}
     </Screen>
   );
 };

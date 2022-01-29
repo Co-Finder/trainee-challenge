@@ -19,7 +19,7 @@ const RecipieDetailsData = [
     foodImg: require(`../../assets/food1.png`),
     foodName: "Pancake",
     category: "food",
-    weight: "10g",
+    weight: "10 ing",
   },
   {
     profileImg: require(`../../assets/profile2.png`),
@@ -27,7 +27,7 @@ const RecipieDetailsData = [
     foodImg: require(`../../assets/food2.png`),
     foodName: "Pancake",
     category: "food",
-    weight: "10g",
+    weight: "10 ing",
   },
   {
     profileImg: require(`../../assets/profile2.png`),
@@ -35,7 +35,7 @@ const RecipieDetailsData = [
     foodImg: require(`../../assets/food2.png`),
     foodName: "Pancake",
     category: "food",
-    weight: "10g",
+    weight: "10 ing",
   },
   {
     profileImg: require(`../../assets/profile2.png`),
@@ -43,7 +43,7 @@ const RecipieDetailsData = [
     foodImg: require(`../../assets/food2.png`),
     foodName: "Pancake",
     category: "food",
-    weight: "10g",
+    weight: "10 ing",
   },
 ];
 

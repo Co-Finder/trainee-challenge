@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
 
   formContainer: {
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
   },
   title: {
     fontSize: 25,
@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
   subText: {
     color: colors.greyLight,
     alignSelf: "center",
+    marginBottom: 5,
     // paddingTop: 10,
   },
 });

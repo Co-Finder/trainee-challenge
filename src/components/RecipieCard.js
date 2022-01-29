@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     height: 250,
     width: CardWidth,
     marginBottom: 20,
-    // position: "relative",
+    position: "relative",
   },
   profileContainer: {
     display: "flex",
@@ -81,13 +81,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  absolute: {
-    position: "absolute",
-    top: 0,
-    // left: 0,
-    // bottom: 0,
-    right: 0,
-  },
+
   foodTitle: {
     fontWeight: "bold",
     marginTop: 15,

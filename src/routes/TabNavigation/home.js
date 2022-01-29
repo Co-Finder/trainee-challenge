@@ -18,10 +18,12 @@ function App() {
       <Stack.Screen
         name="RecipieDetails"
         component={RecipieDetails}
-        options={{
-          headerTitle: "",
-          headerStyle: { backgroundColor: colors.primary },
-        }}
+        options={{ headerShown: false }}
+
+        // options={{
+        //   headerTitle: "",
+        //   headerStyle: { backgroundColor: colors.primary },
+        // }}
       />
     </Stack.Navigator>
   );
