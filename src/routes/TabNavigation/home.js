@@ -11,12 +11,12 @@ function App() {
   return (
     <Stack.Navigator initialRouteName="CheckOutScreen">
       <Stack.Screen
-        name="CheckOutScreen"
+        name="Home"
         component={Home}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="CreditCard"
+        name="RecipieDetails"
         component={RecipieDetails}
         options={{
           headerTitle: "",

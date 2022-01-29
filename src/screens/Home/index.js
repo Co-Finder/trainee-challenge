@@ -1,10 +1,4 @@
-import {
-  View,
-  StyleSheet,
-  FlatList,
-  KeyboardAvoidingView,
-  ScrollView,
-} from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 import React, { useState } from "react";
 import Screen from "../../components/Screen";
 import SearchBar from "../../components/SearchBar";
@@ -113,7 +107,7 @@ const Home = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 5,
-    backgroundColor: colors.greySecondary,
+    backgroundColor: colors.white,
   },
   text: {
     fontWeight: "900",
@@ -122,12 +116,10 @@ const styles = StyleSheet.create({
     fontSize: 22,
   },
   filterContainer: {
-    flex: 0.6,
-    backgroundColor: colors.white,
+    flex: 1,
   },
   categoryContainer: {
-    flex: 1.4,
-    backgroundColor: colors.white,
+    flex: 2,
   },
   recipies: {
     fontWeight: "900",

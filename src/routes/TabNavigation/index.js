@@ -7,13 +7,12 @@ import Home from "./home";
 import Profile from "../../screens/Profile";
 import Notification from "../../screens/Notification";
 import colors from "../../config/colors";
-import { View } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => (
   <Tab.Navigator
-    screenOptions={{
+    tabBarOptions={{
       activeTintColor: `${colors.primary}`,
       inactiveTintColor: `${colors.grey}`,
       keyboardHidesTabBar: true,

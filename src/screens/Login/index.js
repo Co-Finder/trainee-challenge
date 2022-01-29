@@ -14,10 +14,10 @@ import { AppForm, AppFormField, SubmitButton } from "../../components/form";
 import AppText from "../../components/AppText";
 import colors from "../../config/colors";
 
-const validationSchema = Yup.object().shape({
-  username: Yup.string().required().label("username"),
-  password: Yup.string().required().min(4).label("Password"),
-});
+// const validationSchema = Yup.object().shape({
+//   username: Yup.string().required().label("username"),
+//   password: Yup.string().required().min(4).label("Password"),
+// });
 
 function LoginScreen({ navigation }) {
   return (
@@ -37,7 +37,7 @@ function LoginScreen({ navigation }) {
           <AppForm
             initialValues={{ username: "", password: "" }}
             onSubmit={(values) => navigation.navigate("TabNavigation")}
-            validationSchema={validationSchema}
+            // validationSchema={validationSchema}
           >
             <AppFormField
               style={styles.inpt}
