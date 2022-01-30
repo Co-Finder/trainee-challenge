@@ -18,8 +18,11 @@ const styles = StyleSheet.create({
     width: 267,
     height: 258.1,
     borderRadius: 11,
-    margin: 0,
-    marginTop: 0,
+  },
+  subtitle: {
+    fontSize: 15,
+    lineHeight: 25,
+    color: "#9FA5C0",
   },
   input: {
     fontSize: 15,
@@ -31,11 +34,6 @@ const styles = StyleSheet.create({
     borderRadius: 32,
     borderWidth: 1,
     borderColor: "#D0DBEA",
-  },
-  subtitle: {
-    fontSize: 15,
-    lineHeight: 25,
-    color: "#9FA5C0",
   },
   button: {
     alignItems: "center",
@@ -53,6 +51,7 @@ const styles = StyleSheet.create({
   },
   contentAlert: {
     marginTop: 20,
+    marginBottom: 20,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",

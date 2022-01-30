@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, TextInput } from "react-native";
+import { View, Text, Image, TouchableOpacity, SafeAreaView, TextInput, KeyboardAvoidingView } from "react-native";
 import firebase from '../../config/firebaseConfig';
+import styles from "../Login/styles"
 
 export default function NewUser({navigation}) {
   
@@ -26,43 +27,32 @@ export default function NewUser({navigation}) {
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
       let errorCode = error.code;
       let errorMessage = error.message;
+      alert(errorCode, errorMessage);
       cameIn
-      // alert(errorCode, "Codigo test");
     });
   }
   
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.subscribe}>
-        
-      <Text style={styles.title}>Remember To Stretch</Text>
+    <KeyboardAvoidingView style={styles.container}>
+      <Image
+        style={styles.logo}
+        source={require("../../Img/Onboarding-logo.png")}
+      />
+  
+      <Text style={styles.title}>Start Cooking</Text>
       <Text style={styles.subtitle}>Please enter your account here</Text>
 
-      <TextInput style={styles.input} placeholder='Username' onChangeText={email => setEmail(email)} value={email} leftIcon={{ type: "font-awesome", name: "envelope"}} />
+      <TextInput style={styles.input} placeholder='E-mail' onChangeText={email => setEmail(email)} value={email} leftIcon={{ type: "font-awesome", name: "envelope"}} />
 
       <TextInput style={styles.input} placeholder='Password' onChangeText={password => setPassword(password)} value={password} leftIcon={{ type: "font-awesome", name: "envelope"}}  />
 
         <TouchableOpacity onPress={()=>{ createUserFirebase()}}>
-          <Text>Subscribe...</Text>
+          <Text style={styles.title}>Subscribe...</Text>
         </TouchableOpacity>
 
-        <Text onPress={()=>{ CameInNot()}}>Já tenho Login</Text>
-      </View>
-    </SafeAreaView>
+        <Text style={styles.linkSubscrybe} onPress={()=>{ CameInNot()}}>I already have login</Text>
+      
+    </KeyboardAvoidingView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-      flex: 1,
-      backgroundColor: "#FFFFFF",
-      alignItems: "center",
-      justifyContent: "center",
-      paddingTop: Platform.OS === "ios" ? 0 : 50,
-  },
-  subscribe: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});

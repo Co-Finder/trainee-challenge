@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import TextTitle from "./TextTitle";
 
 const URL = "../Img/profile-picture-man-little.png"
+const imagePost = "../Img/photo-salad-medium.png"
 
 export default function RecipesCard() {
   return (
@@ -17,7 +18,7 @@ export default function RecipesCard() {
 
       <Image
         style={styles.imagePost}
-        source={require("../Img/photo-pancake-medium.png")}
+        source={require(imagePost)}
       />
       {/* <Like style={styles.like}/> */}
       <TextTitle labelButton="Pancake" />

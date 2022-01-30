@@ -44,12 +44,16 @@ export default function HomeScreen() {
         <SafeAreaView>
           <TextTitle labelButton="Recipes" />
           <View style={styles.containeRow}>
-            <RecipesCard URL="../Img/profile-picture-man-little.png"/>
-            <RecipesCard />
+            <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
+            <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
           </View>
           <View style={styles.containeRow}>
-            <RecipesCard />
-            <RecipesCard />
+            <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
+            <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
+          </View>
+          <View style={styles.containeRow}>
+            <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
+            <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
           </View>
         </SafeAreaView>
       </SafeAreaView>
