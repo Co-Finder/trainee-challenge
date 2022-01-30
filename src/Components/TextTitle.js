@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const TextTitle = ({ labelButton, onpress }) => {
+const TextTitle = ({ labelButton }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{labelButton}</Text>
