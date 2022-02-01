@@ -39,7 +39,7 @@ To install project follow these steps:
 
 ```bash
 # Clone the Repositório
-$ git clone https://github.com/Mar-io20/trainee-challenge.git
+git clone https://github.com/Mar-io20/trainee-challenge.git
 ```
 
 ```bash
@@ -49,12 +49,12 @@ cd trainee-challenge
 
 ```bash
 # download dependencies
-$ yarn install
+yarn install
 ```
 
 ```bash
 # run
-$ yarn start
+yarn start
 ```
 
 Go to <http://localhost:3000> to see the result.
