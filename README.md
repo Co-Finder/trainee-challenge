@@ -22,5 +22,5 @@ yarn install
 
 ```bash
 # run
-yarn start
+expo start
 ```
