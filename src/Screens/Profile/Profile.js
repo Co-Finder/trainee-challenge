@@ -55,7 +55,7 @@ export default function Profile({ navigation}) {
               console.log(item)
               return (
               <View>
-                <RecipesCard imagePost={item.recipeImageUrl} />
+                <RecipesCard imagePost={item.recipeImageUrl} userProfileImageUrl={item.userProfileImageUrl} userProfileName={item.userProfileName} />
               </View>
             )
           })

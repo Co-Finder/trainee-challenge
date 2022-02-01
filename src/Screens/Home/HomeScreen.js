@@ -55,7 +55,7 @@ export default function HomeScreen() {
               console.log(item)
               return (
               <View style={styles.containeRow}>
-                <RecipesCard imagePost={item.recipeImageUrl} />
+                <RecipesCard imagePost={item.recipeImageUrl} userProfileImageUrl={item.userProfileImageUrl} userProfileName={item.userProfileName} />
               </View>
             )                
           })

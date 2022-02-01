@@ -2,26 +2,15 @@ import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import TextTitle from "./TextTitle";
 
-const URL = "../Img/profile-picture-man-little.png"
-
-export default function RecipesCard({ imagePost }) {
-  console.log('-----------imagePost', imagePost)
+export default function RecipesCard({ imagePost, userProfileImageUrl, userProfileName }) {
   return (
     <View style={styles.containerRecipesCards}>
       <View style={styles.postTitle}>
-        <Image
-          style={styles.imageProfile}
-          source={require(URL)}
-        />
-        <Text style={styles.nameProfile}>Calum Lewis</Text>
+        <Image style={styles.imageProfile} source={{ uri: userProfileImageUrl }} />
+        <Text style={styles.nameProfile}>{ userProfileName }</Text>
       </View>
 
-      <Image
-        style={styles.imagePost}
-        source={{
-          uri: imagePost
-        }} 
-      />
+      <Image style={styles.imagePost} source={{ uri: imagePost }} />
       <TextTitle labelButton="Pancake" />
     </View>
   );
@@ -45,6 +34,8 @@ const styles = StyleSheet.create({
     color: "#3E5481",
   },
   imageProfile: {
+    width: 24,
+    height: 24,
     borderRadius: 11,
     marginRight: 9,
   },
