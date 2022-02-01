@@ -8,7 +8,7 @@ import TextTitle from "../../Components/TextTitle"
 import Spacing from "../../Components/Spacing"
 import RecipesCard from "../../Components/RecipesCard"
 
-
+import data from "../Home/data.json"
 
 export default function Profile({ navigation}) {
   
@@ -50,14 +50,16 @@ export default function Profile({ navigation}) {
           <TextTitle labelButton="Favorite Recipes" />
         </View>
         <View style={styles.recipesContainer}>
-          <RecipesCard imagePost="../Img/profile-picture-man-little.png" />
-          <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
-          <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
-          <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
-          <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
-          <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
-          <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
-          <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
+        {
+            data.recipes.map((item, index) => {
+              console.log(item)
+              return (
+              <View>
+                <RecipesCard imagePost={item.recipeImageUrl} />
+              </View>
+            )
+          })
+          }
         </View>
       </ScrollView>
     </View>

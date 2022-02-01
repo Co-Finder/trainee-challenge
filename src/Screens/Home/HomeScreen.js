@@ -14,6 +14,8 @@ import Spacing from "../../Components/Spacing";
 import Like from "../../Components/Like";
 import RecipesCard from "../../Components/RecipesCard";
 
+import data from "./data.json"
+
 export default function HomeScreen() {
   const [searchRecipes, setSearch] = useState();
 
@@ -22,8 +24,8 @@ export default function HomeScreen() {
   };
 
   return (
-    <ScrollView style={styles.containerScrolView}>
-      <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
+      <SafeAreaView>
         <TextInput
           style={styles.input}
           placeholder="Search Recipe"
@@ -38,25 +40,29 @@ export default function HomeScreen() {
             <ButtonCategory labelButton="candy" onpress={signIg} />
           </View>
         </View>
+        
+        <View style={styles.spacing}>
+          <Spacing  />
+        </View>
 
-        <Spacing />
-
-        <SafeAreaView>
+        <ScrollView >
+        <View style={styles.containerFavorites}>
           <TextTitle labelButton="Recipes" />
-          <View style={styles.containeRow}>
-            <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
-            <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
+        </View>
+        <View style={styles.containeCardRecipes}>
+          {
+            data.recipes.map((item, index) => {
+              console.log(item)
+              return (
+              <View style={styles.containeRow}>
+                <RecipesCard imagePost={item.recipeImageUrl} />
+              </View>
+            )                
+          })
+          }
           </View>
-          <View style={styles.containeRow}>
-            <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
-            <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
-          </View>
-          <View style={styles.containeRow}>
-            <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
-            <RecipesCard imagePost="../Img/profile-picture-man-little.png"/>
-          </View>
-        </SafeAreaView>
+        </ScrollView>
       </SafeAreaView>
-    </ScrollView>
+    </View>
   );
 }

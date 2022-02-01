@@ -1,0 +1,44 @@
+{
+    "recipes": [
+        {
+            "_id": 1,
+            "recipeTitle": "Pancake",
+            "recipeType": "Food",
+            "recipeImageUrl": "https://github.com/Mar-io20/trainee-challenge/blob/main/src/Img/photo-pancake-medium.png?raw=true",
+            "isLiked": "",
+            "recipeIngredients": "",
+            "userProfileImageUrl": "",
+            "userProfileName": ""
+        },
+        {
+            "_id": 2,
+            "recipeTitle": "",
+            "recipeType": "",
+            "recipeImageUrl": "https://github.com/Mar-io20/trainee-challenge/blob/main/src/Img/photo-pancake2-medium.png?raw=true",
+            "isLiked": "",
+            "recipeIngredients": "",
+            "userProfileImageUrl": "",
+            "userProfileName": ""
+        },
+        {
+            "_id": 3,
+            "recipeTitle": "",
+            "recipeType": "",
+            "recipeImageUrl": "https://github.com/Mar-io20/trainee-challenge/blob/main/src/Img/photo-salad-medium.png?raw=true",
+            "isLiked": "",
+            "recipeIngredients": "",
+            "userProfileImageUrl": "",
+            "userProfileName": ""
+        },
+        {
+            "_id": 4,
+            "recipeTitle": "",
+            "recipeType": "",
+            "recipeImageUrl": "https://github.com/Mar-io20/trainee-challenge/blob/main/src/Img/photo-salad2-medium.png?raw=true",
+            "isLiked": "",
+            "recipeIngredients": "",
+            "userProfileImageUrl": "",
+            "userProfileName": ""
+        }
+    ]
+}

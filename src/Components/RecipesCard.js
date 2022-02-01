@@ -3,9 +3,9 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import TextTitle from "./TextTitle";
 
 const URL = "../Img/profile-picture-man-little.png"
-const imagePost = "../Img/photo-salad-medium.png"
 
-export default function RecipesCard() {
+export default function RecipesCard({ imagePost }) {
+  console.log('-----------imagePost', imagePost)
   return (
     <View style={styles.containerRecipesCards}>
       <View style={styles.postTitle}>
@@ -18,9 +18,10 @@ export default function RecipesCard() {
 
       <Image
         style={styles.imagePost}
-        source={require(imagePost)}
+        source={{
+          uri: imagePost
+        }} 
       />
-      {/* <Like style={styles.like}/> */}
       <TextTitle labelButton="Pancake" />
     </View>
   );
@@ -48,6 +49,8 @@ const styles = StyleSheet.create({
     marginRight: 9,
   },
   imagePost: {
+    width: 150,
+    height: 150,
     borderRadius: 16,
     marginBottom: 23,
   },
