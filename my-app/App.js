@@ -7,6 +7,7 @@ import { useFonts, Inter_400Regular } from '@expo-google-fonts/inter';
 import {FONTS} from "./constants/theme"
 import {Home, Login, Notification, Profile} from "./screens";
 import Tabs from "./navigation/tabs"
+import Register from './screens/register';
 
 
 
@@ -21,6 +22,7 @@ function Stacks(){
         screenOptions = {{
           headerShown : false
         }}>
+        <Stack.Screen name = "register" component = {Register}/>
         <Stack.Screen name = "login" component = {Login}/>
         <Stack.Screen name = "main" component = {Tabs}/>
       </Stack.Navigator>
@@ -32,6 +34,7 @@ function Stacks(){
 
 
 export default function App() {
+  const[user, setUser] = useState(null)
   let [fontsLoaded] = useFonts({
     Inter_400Regular,
   });

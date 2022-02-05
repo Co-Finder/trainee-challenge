@@ -153,6 +153,18 @@ function Login(){
             
         )
     }
+
+    function RegistrationLink(){
+        const navigation = useNavigation()
+        return (
+            <View style = {styles.registrationContainer}>
+                <Text style = {[FONTS.secondaryText]}>Don't have an account?</Text>
+                <Text 
+                    style = {[FONTS.secondaryText, {marginLeft : 8, fontWeight : "bold", color : "blue"}]}
+                    onPress = {()=>navigation.navigate("register")}>Register</Text>
+            </View>
+        )
+    }
     
     return(
         <SafeAreaView style = {styles.androidContainer}>
@@ -165,6 +177,7 @@ function Login(){
                 </View>
                 {renderLoginInfo()}
                 {renderSubmitButton()}
+                <RegistrationLink/>
             </View>
         
         </SafeAreaView>
@@ -245,6 +258,11 @@ const styles = StyleSheet.create({
         position : "absolute",
         top : 237,
         right : 130
+    },
+    registrationContainer : {
+        justifyContent : "center",
+        width : SIZES.width,
+        flexDirection : "row"
     }
 })
 
