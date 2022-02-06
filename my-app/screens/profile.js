@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import {Image, View, Text, StyleSheet, ScrollView, Platform, SafeAreaView, StatusBar, TouchableOpacity} from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, FONTS, images, SIZES } from "../constants";
 import { Feather } from '@expo/vector-icons';
+import AppContext from "../context/appContext";
 
 function Profile({navigation}){
+    const {user} = useContext(AppContext)
     const DummyData = [
         {
             id : 1,
@@ -53,7 +55,7 @@ function Profile({navigation}){
                <Image style = {{width : 100 , height : 100}}
                 resizeMode="contain"
                 source = {images.profile}/>
-                <View style = {{alignItems : "center", marginTop : 24}}><Text style = {FONTS.title}>Choirul Syafril</Text></View>     
+                <View style = {{alignItems : "center", marginTop : 24}}><Text style = {FONTS.title}>{user.fullName}</Text></View>     
             </View>
         )
     }

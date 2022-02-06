@@ -1,9 +1,15 @@
 import {TouchableOpacity, KeyboardAvoidingView,StyleSheet, Text, View } from 'react-native';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 //import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { COLORS, FONTS, SIZES } from '../constants';
 import { Input } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { db } from '../firebase/config';
+import { addDoc, collection } from 'firebase/firestore';
+import AppContext from '../context/appContext';
+import { Button } from 'react-native-elements';
+
 
 
 export default function Register() {
@@ -11,31 +17,89 @@ export default function Register() {
     const[email, setEmail] = useState("")
     const[password, setPassword] = useState("")
     const[confirmation, setConfirmation] = useState("")
-  
+    const [error, setError] = useState(false)
+    const [errorMessage, setErrorMessage] = useState("")
+    const [isRegiterLoading, setIsRegisterLoading] = useState(false)
+    
+    const {setUser} = useContext(AppContext)
     
     function renderRegisterButton(){
         const navigation = useNavigation()
                 
-        function handleSubmit(navigation){
-            //console.log("logged in")
+        async function handleSubmit(){
+            if(password !== confirmation){
+                alert("passwords do not match")
+                return
+            }
+            //remove any errors if there are any
+            if(error){
+                setError(false)
+            }
+
+            //start button animation
+            setIsRegisterLoading(true)
+
+            const auth = getAuth()
+            try {
+                let userCredentials = await createUserWithEmailAndPassword(auth, email, password)
+                //console.log("UserCredentials : ", userCredentials)
+                let data = {
+                    id : userCredentials.user.uid,
+                    fullName : fullName,
+                }
+                let docRef = addDoc(collection(db, "users"), data)
+                setUser(data)
+
+            } catch (error) {
+                //console.log("Error Code:", error.code)
+                //stop button animation
+                setIsRegisterLoading(false)
+
+                setError(true)
+
+                switch (error.code){
+                    case "auth/invalid-email":
+                        setErrorMessage("Invalid email address")
+                        break;
+                    default : 
+                        setErrorMessage("Something went wrong try again")
+                }
+                
+
+            }
             
         }
         
         return (
-            <TouchableOpacity
-                style = {{
-                    backgroundColor : COLORS.primary,
+            <>
+            {error && (
+                <View style = {{alignItems : "center", marginBottom : 10}}>
+                    <Text style = {[FONTS.buttonText, {color : "red"}]}>{errorMessage}</Text>
+                </View>
+            )}
+            
+            <Button 
+                title = "Register"
+                containerStyle = {{
+                    
                     width : 327,
                     height : 57,
                     borderRadius : 32,
                     alignItems : "center",
                     justifyContent : "center",
                 }}
-                onPress = {()=>handleSubmit(navigation)}>
-                <View>
-                    <Text style = {FONTS.buttonText}>Register</Text>
-                </View>
-            </TouchableOpacity>
+                buttonStyle = {{
+                    width : "100%",
+                    backgroundColor : COLORS.primary,
+                    height : 57,
+                    borderRadius : 32,
+                    alignItems : "center",
+                    justifyContent : "center",
+                }}
+                raised = {true}
+                loading = {isRegiterLoading}
+                onPress = {handleSubmit}/>
+            </>
             
         )
     }

@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import {TouchableOpacity, KeyboardAvoidingView, Image, View, Text, StyleSheet, ScrollView, Platform, SafeAreaView, StatusBar} from "react-native";
 import {COLORS, FONTS, images, SIZES} from "../constants";
 import {Icon, Input} from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { collection, getDocs } from "firebase/firestore";
+import AppContext from "../context/appContext";
+import {db} from "../firebase/config";
+import { Button } from 'react-native-elements';
+
+
+
+//suppressing the firebase AsyncStorage waring
+import {LogBox} from 'react-native';
+LogBox.ignoreLogs(['Asyncstorage: ...']);
 
 
 function Login(){
+    const navigation = useNavigation()
+    const [error, setError] = useState(false)
+    const [errorMessage, setErrorMessage] = useState("")
+    const {setUser} =  useContext(AppContext);
+    const [email,setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [loginLoading, setLoginLoading] = useState(false)
+
     function renderTopSection(){
         //console.log("Top render called")
         return(
@@ -69,11 +88,22 @@ function Login(){
 
 
     function renderLoginInfo(){
+        function handleEmailChange(val){
+            setEmail(val)
+            //console.log("Email is:", email)
+        }
+
+        function handlePasswordChange(val){
+            setPassword(val)
+        }
+        
         return (
             <KeyboardAvoidingView style = {{alignItems : "center", marginTop : 17}}>
                  <Text style = {FONTS.secondaryText}>Please Enter Your Account Here</Text>
                  <View style = {{width : 327,}}>
-                     <Input placeholder = "Username"
+                     <Input placeholder = "Email"
+                        value = {email}
+                        onChangeText = {handleEmailChange}
                         leftIcon = {{
                             type : "material-community",
                             name : "email-outline",
@@ -93,6 +123,8 @@ function Login(){
                         inputStyle = {{paddingLeft : 10}}/>
                     
                     <Input placeholder = "password"
+                        value = {password}
+                        onChangeText = {handlePasswordChange}
                         leftIcon = {{
                             type : "feather",
                             name : "lock",
@@ -128,29 +160,77 @@ function Login(){
 
 
     function renderSubmitButton(){
-        const navigation = useNavigation()
-                
-        function handleSubmit(navigation){
-            //console.log("logged in")
-            navigation.navigate("main")
+        
+
+        async function handleSubmit(){
+            
+            if(error){
+                setError(false)
+            }
+            //start animation of button
+            setLoginLoading(true) 
+            
+            const auth = getAuth()
+            try {
+                let userCredentials = await signInWithEmailAndPassword(auth, email, password)
+                //console.log("userCredentials:", userCredentials)
+                if(userCredentials)
+                {
+                    const querySnapshot = await getDocs(collection(db, "users"))
+                    //console.log("querySnapshot:", querySnapshot)
+                    let userData;
+                    querySnapshot.forEach(doc=> {
+                        let data = doc.data()
+                        if(data.id === userCredentials.user.uid)
+                        {
+                            userData = data
+                        }
+                    })
+
+                    setUser(userData)
+                }
+
+            } catch (error) {
+                //console.log("error code:", error.code)
+                setError(true)
+                setErrorMessage("Invalid email or password")
+                //stop animation of button
+                setLoginLoading(false)        
+            }
+            
+
         }
         
         return (
-            <TouchableOpacity
-                style = {{
-                    backgroundColor : COLORS.primary,
+        <> 
+            {error && (
+                <View style = {{alignItems : "center", marginBottom : 10}}>
+                    <Text style = {[FONTS.buttonText, {color : "red"}]}>{errorMessage}</Text>
+                </View>
+            )}
+
+            <Button 
+                title = "Login"
+                containerStyle = {{
+                    
                     width : 327,
                     height : 57,
                     borderRadius : 32,
                     alignItems : "center",
                     justifyContent : "center",
                 }}
-                onPress = {()=>handleSubmit(navigation)}>
-                <View>
-                    <Text style = {FONTS.buttonText}>Login</Text>
-                </View>
-            </TouchableOpacity>
-            
+                buttonStyle = {{
+                    width : "100%",
+                    backgroundColor : COLORS.primary,
+                    height : 57,
+                    borderRadius : 32,
+                    alignItems : "center",
+                    justifyContent : "center",
+                }}
+                raised = {true}
+                loading = {loginLoading}
+                onPress = {handleSubmit}/>
+        </> 
         )
     }
 
@@ -167,10 +247,9 @@ function Login(){
     }
     
     return(
-        <SafeAreaView style = {styles.androidContainer}>
         
+        <SafeAreaView style = {styles.androidContainer}>
             <View style = {styles.container}>
-                
                 {renderTopSection()}
                 <View style = {{marginTop : 55}}>
                     <Text style = {FONTS.h1}>Start Cooking</Text>
@@ -178,9 +257,10 @@ function Login(){
                 {renderLoginInfo()}
                 {renderSubmitButton()}
                 <RegistrationLink/>
-            </View>
+            </View>    
         
         </SafeAreaView>
+        
         
     )
 }
@@ -265,5 +345,24 @@ const styles = StyleSheet.create({
         flexDirection : "row"
     }
 })
+
+{/* <TouchableOpacity
+style = {{
+    backgroundColor : COLORS.primary,
+    width : 327,
+    height : 57,
+    borderRadius : 32,
+    alignItems : "center",
+    justifyContent : "center",
+}}
+onPress = {handleSubmit}>
+<View>
+    <Text style = {FONTS.buttonText}>Login</Text>
+</View>
+</TouchableOpacity> */}
+
+
+
+
 
 export default Login;
