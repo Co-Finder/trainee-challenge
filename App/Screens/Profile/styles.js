@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
   },
   profileStyle:{
     alignItems: "center",
-    marginBottom: 24,
   },
   photoProfile: {
     marginTop: 0,
@@ -25,7 +24,6 @@ const styles = StyleSheet.create({
   }, 
   containerFavorites: {
     marginLeft: '5%',
-    marginTop: 24,
   },
   recipesContainer:{
     flexDirection: "row", 

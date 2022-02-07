@@ -3,9 +3,7 @@ import { StyleSheet, View } from "react-native";
 
 const Spacing = () => {
   return (
-    <View style={styles.container}>
-      
-    </View>
+    <View style={styles.container} />
   );
 };
 
@@ -16,5 +14,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F4F5F7",
     width: "100%",
     height: 8,
+    marginTop: 24,
+    marginBottom: 24,
   }
 });

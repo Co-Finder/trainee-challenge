@@ -1,29 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Text, Image, View, TextInput, TouchableOpacity, KeyboardAvoidingView } from "react-native";
-import firebase from "../../config/firebaseConfig";
-import styles from "../Login/styles";
-import { Icon } from "react-native-elements";
+import firebase from "../../firebaseConfig/firebaseConfig";
+import styles from "./styles";
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorLoaging, setErrorLoaging] = useState("");
-  
+
   const cameIn = () => {
     navigation.reset({
       index: 1,
-      routes: [{ name: "Main" }],
+      routes: [{ name: "TabNavegation" }],
     });
   };
 
   const LoginFirebase = () => {
-    firebase .auth().signInWithEmailAndPassword(email, password).then((userCredential) => { let user = userCredential.user;
-        cameIn()
-      })
+    firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential) => {
+      let user = userCredential.user;
+      cameIn()
+    })
       .catch((error) => {
         let errorCode = error.code;
-        let errorMessage = error.message;
-        alert(errorCode + " " + errorMessage)
+        alert(errorCode )
       });
   };
 
@@ -33,7 +31,7 @@ export default function Login({ navigation }) {
       if (user) {
         cameIn();
       } else {
-        Alert(errorMessage);
+        alert(errorCode);
       }
     });
   });
@@ -52,7 +50,6 @@ export default function Login({ navigation }) {
 
       <TextInput style={styles.input} placeholder="Password" onChangeText={(password) => setPassword(password)} value={password} leftIcon={{ type: "font-awesome", name: "envelope" }} />
 
-      
       {email === "" || password === "" ? (
         <TouchableOpacity disabled={true} style={styles.button}>
           <Text style={styles.TextButtonLogin}> Login</Text>
@@ -65,7 +62,7 @@ export default function Login({ navigation }) {
 
       <TouchableOpacity>
         <Text style={styles.registration}>
-          Don't have registration? 
+          Don't have registration.
           <Text style={styles.linkSubscrybe} onPress={() => navigation.navigate("NewUser")} >
             Subscribe now!
           </Text>

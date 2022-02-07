@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
   },
   containerFavorites: {
     marginLeft: '5%',
-    marginTop: 24,
   },
   containeRow: {
     flexDirection: "row",

@@ -3,7 +3,7 @@ import { TouchableOpacity, StyleSheet, Text } from "react-native";
 
 
 const ButtonCategory = ({ labelButton, onpress }) => {
-
+  
   
   return (
     <TouchableOpacity style={styles.button} onPress={onpress}>
@@ -17,7 +17,7 @@ export default ButtonCategory;
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#1FCC79",
+    backgroundColor: "#F4F5F7",
     width: 68,
     height: 48,
     justifyContent: "center",
@@ -29,6 +29,6 @@ const styles = StyleSheet.create({
   title:{
     fontSize: 15,
     fontWeight: 'bold',
-    color: "#fff"
+    color: "#9FA5C0"
   }
 });

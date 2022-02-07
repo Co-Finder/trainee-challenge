@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import TextTitle from "./TextTitle";
 
-export default function RecipesCard({ imagePost, userProfileImageUrl, userProfileName }) {
+export default function RecipesCard({ imagePost, userProfileImageUrl, userProfileName, recipeTitle, recipeType, recipeIngredients }) {
   return (
     <View style={styles.containerRecipesCards}>
       <View style={styles.postTitle}>
@@ -11,7 +11,9 @@ export default function RecipesCard({ imagePost, userProfileImageUrl, userProfil
       </View>
 
       <Image style={styles.imagePost} source={{ uri: imagePost }} />
-      <TextTitle labelButton="Pancake" />
+      <TextTitle labelButton={ recipeTitle } />
+
+      <Text style={styles.textDataRecipe}>{recipeType} - {recipeIngredients}</Text>
     </View>
   );
 }
@@ -45,8 +47,11 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginBottom: 23,
   },
-  like: {
-    margin: 33,
-    position: "absolute",
+  textDataRecipe:{
+    fontSize: 12,
+    fontWeight: "500",
+    color: "#9FA5C0",
+    marginLeft: 10,
   },
+
 });
