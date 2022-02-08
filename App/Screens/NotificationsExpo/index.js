@@ -80,10 +80,11 @@ export default function NotificationsScreen() {
 }
 
 async function schedulePushNotification() {
+
   await Notifications.scheduleNotificationAsync({
     namePerson: "Mario 📬",
     content: {
-      body: 'posted a new recipe',
+      body: `Posted a new recipe`,
       data: { data: ' - 5 min' },
     },
     trigger: { seconds: 2 }, // timer do tempo que a aplicação vai levar para acionar a notificação

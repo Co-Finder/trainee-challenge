@@ -15,7 +15,7 @@ export default function Profile({ navigation }) {
   const HomeScreen = () => {
     navigation.reset({
       index: 1,
-      routes: [{ name: "TabNavegation" }],
+      routes: [{ name: "AppDrawerScreen" }],
     });
   };
   const getOut = () => {
