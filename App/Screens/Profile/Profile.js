@@ -36,7 +36,6 @@ export default function Profile({ navigation }) {
         <TouchableOpacity onPress={() => { logOutFirebase() }}>
           <Text>LogOut</Text>
         </TouchableOpacity>
-
         <MaterialCommunityIcons name="chevron-left" color={'#000'} size={35} onPress={() => { HomeScreen() }} />
       </TouchableOpacity>
       <View style={styles.profileStyle}>
@@ -53,15 +52,16 @@ export default function Profile({ navigation }) {
         <View style={styles.recipesContainer}>
           {
             data.recipes.map((item, index) => {
-              console.log(item)
               return (
                 <View>
                   <RecipesCard
-                    imagePost={item.recipeImageUrl} 
-                    userProfileImageUrl={item.userProfileImageUrl} 
-                    userProfileName={item.userProfileName} 
-                    
-                    />
+                    imagePost={item.recipeImageUrl}
+                    userProfileImageUrl={item.userProfileImageUrl}
+                    userProfileName={item.userProfileName}
+                    recipeTitle={item.recipeTitle}
+                    recipeType={item.recipeType}
+                    recipeIngredients={item.recipeIngredients}
+                  />
                 </View>
               )
             })

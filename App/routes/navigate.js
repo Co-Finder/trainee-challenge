@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 
 import Login from "../Screens/Login"
@@ -11,6 +12,15 @@ import HomeScreen from "../Screens/Home/HomeScreen";
 import Profile from "../Screens/Profile/Profile";
 import Notifications from "../Screens/Notifications/index";
 
+
+const LoginStack = createStackNavigator();
+const LoginStackScreen = () => (
+  <LoginStack.Navigator screenOptions={{ headerShown: false }}>
+    <LoginStack.Screen name="Login" component={Login} />
+    <LoginStack.Screen name="TabNavegation" component={AppTabsScreen} />
+    <LoginStack.Screen name="NewUser" component={NewUser} />
+  </LoginStack.Navigator>
+)
 
 const AppTabs = createBottomTabNavigator();
 const AppTabsScreen = () => (
@@ -33,14 +43,25 @@ const AppTabsScreen = () => (
   </AppTabs.Navigator>
 );
 
-const LoginStack = createStackNavigator();
-const LoginStackScreen = () => (
-  <LoginStack.Navigator screenOptions={{ headerShown: false }}>
-    <LoginStack.Screen name="Login" component={Login} />
-    <LoginStack.Screen name="TabNavegation" component={AppTabsScreen} />
-    <LoginStack.Screen name="NewUser" component={NewUser} />
-  </LoginStack.Navigator>
-)
+const AppDrawer = createDrawerNavigator();
+const AppDrawerScreen = () => (
+  <AppDrawer.Navigator drawerPosition="right">
+    <AppDrawer.Screen
+      name="Tabs"
+      component={AppTabsScreen}
+      options={{ drawerLabel: "Home" }}
+    />
+    <AppDrawer.Screen
+      name="Settings"
+      component={Settings}
+      options={{
+        gestureEnabled: false,
+      }}
+    />
+  </AppDrawer.Navigator>
+);
+
+
 
 export function Navigate() {
   return (

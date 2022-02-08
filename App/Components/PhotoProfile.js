@@ -2,31 +2,19 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import { Image } from "react-native";
 
-
-
-export default function PhotoProfile() {
+export default function PhotoProfile({userProfileImageUrl}) {
   return (
     <View style={styles.container}>
-      <View>
-        <Image
-          style={{
-            width: 150,
-            height: 150,
-            borderRadius: 11,
-          }}
-          source={{uri: 'https://github.com/Mar-io20.png'}}
-        />
-      </View>
+        <Image style={styles.imageProfile} source={{ uri: userProfileImageUrl }} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#FFFFFF",
-    alignItems: "center",
-    paddingTop: Platform.OS === "android" ? 40 : 0,
-  },
-  RecipeCard: {},
+  imageProfile:{
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+  },  
+
 });
