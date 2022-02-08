@@ -6,6 +6,8 @@
             "recipeType": "Food",
             "recipeImageUrl": "https://github.com/Mar-io20/trainee-challenge/blob/main/src/Img/photo-pancake-medium.png?raw=true",
             "isLiked": "",
+            "menasageNotifi": "Posted a new recipe",
+            "dataTime": " - 5 min",
             "recipeIngredients": "10 ing",
             "userProfileImageUrl": "https://github.com/Mar-io20/trainee-challenge/blob/main/src/Img/profile-picture-man-little.png?raw=true",
             "userProfileName": "Calum Lewis"
@@ -16,7 +18,9 @@
             "recipeType": "Food",
             "recipeImageUrl": "https://github.com/Mar-io20/trainee-challenge/blob/main/src/Img/photo-salad-medium.png?raw=true",
             "isLiked": "",
+            "menasageNotifi": "Posted a new recipe",
             "recipeIngredients": "7 ing",
+            "dataTime": " - 9 min",
             "userProfileImageUrl": "https://github.com/Mar-io20/trainee-challenge/blob/main/src/Img/profile-picture-man1-48px.png?raw=true",
             "userProfileName": "John Priyadi"
         },
@@ -26,7 +30,9 @@
             "recipeType": "Food",
             "recipeImageUrl": "https://github.com/Mar-io20/trainee-challenge/blob/main/src/Img/photo-pancake2-medium.png?raw=true",
             "isLiked": "",
+            "menasageNotifi": "Posted a new recipe",
             "recipeIngredients": "9 ing",
+            "dataTime": " - 25 min",
             "userProfileImageUrl": "https://github.com/Mar-io20/trainee-challenge/blob/main/src/Img/profile-picture-woman-little.png?raw=true",
             "userProfileName": "Eilif Sonas"
         },
@@ -36,9 +42,35 @@
             "recipeType": "Food",
             "recipeImageUrl": "https://github.com/Mar-io20/trainee-challenge/blob/main/src/Img/photo-salad2-medium.png?raw=true",
             "isLiked": "",
+            "menasageNotifi": "Sent a message",
             "recipeIngredients": "6 ing",
+            "dataTime": " - 7 min",
             "userProfileImageUrl": "https://github.com/Mar-io20/trainee-challenge/blob/main/src/Img/profile-picture-woman1-48px.png?raw=true",
             "userProfileName": "Elena Shelby"
+        },
+        {
+            "_id": 5,
+            "recipeTitle": "chicken filet",
+            "recipeType": "Food",
+            "recipeImageUrl": "https://images.unsplash.com/photo-1526318896980-cf78c088247c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            "isLiked": "",
+            "menasageNotifi": "Liked a recipe",
+            "recipeIngredients": "23 ing",
+            "dataTime": " - 26 min",
+            "userProfileImageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            "userProfileName": "Mark IV"
+        },
+        {
+            "_id": 6,
+            "recipeTitle": "Soup",
+            "recipeType": "Food",
+            "recipeImageUrl": "https://images.unsplash.com/photo-1505253668822-42074d58a7c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            "isLiked": "",
+            "menasageNotifi": "Liked a recipe",
+            "recipeIngredients": "5 ing",
+            "dataTime": " - 34 min",
+            "userProfileImageUrl": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+            "userProfileName": "Mateus"
         }
     ]
 }

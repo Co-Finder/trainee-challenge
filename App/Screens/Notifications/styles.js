@@ -10,10 +10,21 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginLeft: 24,
   },
-  notificationCard:{
-    justifyContent: "space-between",
-    flexDirection: "row",
+  photoProfile:{
+    marginBottom: 12,
+    marginTop: 12,
   },
+  notificationCard:{
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  containerMensage:{
+    marginLeft: 24,
+    flexDirection: "column",
+  },
+  bodyMensage:{
+    backgroundColor: "#ddd"
+  }
   
 
 });
