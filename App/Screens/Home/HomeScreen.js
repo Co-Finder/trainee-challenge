@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SafeAreaView, View, TextInput, ScrollView } from "react-native";
+import { SafeAreaView, View, Text, TextInput, ScrollView } from "react-native";
 import styles from "./styles";
 import ButtonCategory from "../../Components/ButtonCategory";
 import TextTitle from "../../Components/TextTitle";
@@ -39,7 +39,6 @@ export default function HomeScreen() {
         <View style={styles.containeCardRecipes}>
           {
             data.recipes.map((item, index) => {
-              console.log(item)
               return (
                 <View style={styles.containeRow}>
                   <RecipesCard

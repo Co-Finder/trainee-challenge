@@ -12,6 +12,7 @@ import HomeScreen from "../Screens/Home/HomeScreen";
 import Profile from "../Screens/Profile/Profile";
 import NotificationsScreen from "../Screens/NotificationsExpo/index";
 import { Button, View } from "react-native";
+import NotificationsFirebase from "../Screens/NotificationFirebase";
 
 
 const LoginStack = createStackNavigator();
@@ -52,6 +53,12 @@ const AppTabsScreen = () => (
       ),
     }}
     />
+    {/* <AppTabs.Screen name="Firebse" component={NotificationsFirebase} options={{
+      tabBarLabel: 'Firebse', tabBarIcon: ({ color, size }) => (
+        <MaterialCommunityIcons name="alert-box" color={color} size={size} />
+      ),
+    }}
+    /> */}
   </AppTabs.Navigator>
 );
 

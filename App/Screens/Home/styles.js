@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   containerFavorites: {
+    marginTop: 24,
     marginLeft: '5%',
   },
   containeRow: {

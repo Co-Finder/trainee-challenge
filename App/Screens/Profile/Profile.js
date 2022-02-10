@@ -51,7 +51,7 @@ export default function Profile({ navigation }) {
         </View>
         <View style={styles.recipesContainer}>
           {
-            data.recipes.map((item, index) => {
+            data.recipes.map((item) => {
               return (
                 <View>
                   <RecipesCard
