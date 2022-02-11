@@ -39,6 +39,11 @@ const styles = StyleSheet.create({
       flexWrap: 'wrap',
       justifyContent: "space-evenly",
   },
+  Like:{
+    position: "absolute",
+    marginTop: "47%",
+    marginLeft: "68%",
+  },
 });
 
 export default styles;

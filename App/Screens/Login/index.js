@@ -10,7 +10,7 @@ export default function Login({ navigation }) {
   const cameIn = () => {
     navigation.reset({
       index: 1,
-      routes: [{ name: "TabNavegation" }],
+      routes: [{ name: "PrincipalStackScreen" }],
     });
   };
 
@@ -21,7 +21,7 @@ export default function Login({ navigation }) {
     })
       .catch((error) => {
         let errorCode = error.code;
-        alert(errorCode )
+        alert(errorCode)
       });
   };
 

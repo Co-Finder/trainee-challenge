@@ -19,14 +19,13 @@ export default function NewUser({ navigation }) {
   const cameIn = () => {
     navigation.reset({
       index: 1,
-      routes: [{ name: "HomeScreen" }],
+      routes: [{ name: "PrincipalStackScreen" }],
     });
   };
 
   function createUserFirebase() {
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
       let errorCode = error.code;
-      let errorMessage = error.message;
       alert(errorCode);
       cameIn
     });

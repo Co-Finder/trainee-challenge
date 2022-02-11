@@ -83,7 +83,7 @@ function Settings({ navigation }) {
 export function Navigate() {
   return (
     <NavigationContainer independent={true}>
-      <PrincipalStackScreen />
+      <LoginStackScreen />
     </NavigationContainer>
   );
 };
