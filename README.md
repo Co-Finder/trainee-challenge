@@ -89,9 +89,9 @@ PT-BR <br> Este projeto esta sendo desenvolvido como desafio para uma vaga de tr
 - Commit your feature: `git commit -m 'feat: My new feature'`;
 - Push to your branch: `git push -u origin my-feature`.
 
-## :memo: License
+<!-- ## :memo: License -->
 
-This project is under the MIT license. See the [LICENSE](LICENSE.md) file for more details.
+<!-- This project is under the MIT license. See the [LICENSE](LICENSE.md) file for more details. -->
 
 ---
 
