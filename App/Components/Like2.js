@@ -5,10 +5,6 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 export default function Like() {
   const Liked = true
 
-  const [searchRecipes, setSearch] = useState();
-  const [expoPushToken, setExpoPushToken] = useState('');
-  const [notification, setNotification] = useState(false);
-
   const notificationListener = useRef();
   const responseListener = useRef();
 
@@ -70,8 +66,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
-    backgroundColor: 'rgba( 230, 230, 230, 0.3)',
-    // backgroundColor: '#000',
+    //backgroundColor: 'rgba( 230, 230, 230, 0.3)',
+    backgroundColor: '#000',
   },
   backgroundLiked: {
     width: 32,
@@ -79,8 +75,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
-    backgroundColor: 'rgba( 230, 230, 230, 0.9)',
-    // backgroundColor: '#000',
+    //backgroundColor: 'rgba( 230, 230, 230, 0.9)',
+    backgroundColor: '#000',
   },
 });
 

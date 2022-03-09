@@ -3,6 +3,7 @@ import { View, Text, Image, TouchableOpacity, SafeAreaView, TextInput, KeyboardA
 import firebase from "../../../firebaseConfig/firebaseConfig"
 import styles from "./styles"
 
+
 export default function NewUser({ navigation }) {
 
   const [email, setEmail] = useState('');
@@ -25,8 +26,6 @@ export default function NewUser({ navigation }) {
 
   function createUserFirebase() {
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-      let errorCode = error.code;
-      alert(errorCode);
       cameIn
     });
   }
@@ -42,9 +41,9 @@ export default function NewUser({ navigation }) {
       <Text style={styles.title}>Start Cooking</Text>
       <Text style={styles.subtitle}>Please enter your new account here</Text>
 
-      <TextInput style={styles.input} placeholder='New E-mail' onChangeText={email => setEmail(email)} value={email} leftIcon={{ type: "font-awesome", name: "envelope" }} />
+      <TextInput style={styles.input} type="email" placeholder='New E-mail' onChangeText={email => setEmail(email)} value={email} leftIcon={{ type: "font-awesome", name: "envelope" }} />
 
-      <TextInput style={styles.input} placeholder='New Password' onChangeText={password => setPassword(password)} value={password} leftIcon={{ type: "font-awesome", name: "envelope" }} />
+      <TextInput style={styles.input} type="password" placeholder='New Password' onChangeText={password => setPassword(password)} value={password} leftIcon={{ type: "font-awesome", name: "envelope" }} />
 
       <TouchableOpacity style={styles.buttonSubscribe} onPress={() => { createUserFirebase() }}>
         <Text style={styles.TextButtonLogin} >Subscribe...</Text>

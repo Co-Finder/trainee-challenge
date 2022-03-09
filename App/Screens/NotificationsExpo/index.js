@@ -14,14 +14,13 @@ import data from "../../data/data.json"
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
-    shouldShowAlert: true,
+    shouldShowAlert: false,
     shouldPlaySound: false,
     shouldSetBadge: false,
   }),
 });
 
 export default function NotificationsScreen() {
-
   const [expoPushToken, setExpoPushToken] = useState('');
   const [notification, setNotification] = useState(false);
   const notificationListener = useRef();
@@ -54,6 +53,7 @@ export default function NotificationsScreen() {
               <TouchableOpacity onPress={async () => {
                 await schedulePushNotification(); // onde a notificação é lancada para o usuario
               }}>
+                {/* <Text>Your expo push token: {expoPushToken}</Text> */}
                 <View style={styles.notificationCard}>
                   <View style={styles.photoProfile}>
                     <PhotoProfile
@@ -84,6 +84,7 @@ async function schedulePushNotification() {
   await Notifications.scheduleNotificationAsync({
     namePerson: "Mario 📬",
     content: {
+      title: "You've got mail! 📬",
       body: `Posted a new recipe`,
       data: { data: ' - 5 min' },
     },

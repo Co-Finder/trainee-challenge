@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+import { Provider } from 'react-redux';
+import store from '../redux/store'
 
 import Login from "../Screens/Login"
 import NewUser from "../Screens/Login/NewUser/NewUser"
@@ -12,7 +14,10 @@ import HomeScreen from "../Screens/Home/HomeScreen";
 import Profile from "../Screens/Profile/Profile";
 import NotificationsScreen from "../Screens/NotificationsExpo/index";
 import { Button, View } from "react-native";
-import NotificationsFirebase from "../Screens/NotificationFirebase";
+import NotificationFirebase from "../Screens/NotificationFirebase";
+import RecipeDetails from "../Screens/RecipeDetails";
+import Contacts from "../Screens/Contacts";
+// import NotificationsFirebase from "../Screens/NotificationFirebase";
 
 
 const LoginStack = createStackNavigator();
@@ -68,22 +73,18 @@ const AppDrawerScreen = () => (
     initialRouteName="TabNavigation"
     screenOptions={{ tabBarActiveTintColor: '#1FCC79', headerShown: false }}>
     <AppDrawer.Screen name="Home" component={AppTabsScreen} />
-    <AppDrawer.Screen name="Settings" component={Settings} />
+    <AppDrawer.Screen name="Recipe Details" component={RecipeDetails} />
+    <AppDrawer.Screen name="Contacts" component={Contacts} />
   </AppDrawer.Navigator>
 );
-//
-function Settings({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
-// 
+
+
 export function Navigate() {
   return (
     <NavigationContainer independent={true}>
-      <LoginStackScreen />
+      <Provider store={store}>
+        <LoginStackScreen />
+      </Provider>
     </NavigationContainer>
   );
 };

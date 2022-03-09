@@ -26,6 +26,9 @@ const styles = StyleSheet.create({
     marginRight: 16,
     marginTop: 24,
   },
+  buttonPressed:{
+    backgroundColor: "#1FCC79",
+  },
   title:{
     fontSize: 15,
     fontWeight: 'bold',

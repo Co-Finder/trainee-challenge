@@ -1,43 +1,52 @@
 import React, { useState, useEffect, useRef } from "react";
 import { SafeAreaView, View, Text, TextInput, ScrollView, TouchableOpacity } from "react-native";
+import { useDispatch } from "react-redux";
+import { changeLike } from "../../redux/likeSlice";
 import * as Notifications from 'expo-notifications';
 import styles from "./styles";
+
+import data from "../../data/data.json"
 
 import ButtonCategory from "../../Components/ButtonCategory";
 import TextTitle from "../../Components/TextTitle";
 import Spacing from "../../Components/Spacing";
 import RecipesCard from "../../Components/RecipesCard";
 import Like from "../../Components/Like";
+import ReceitaButton from "../../routes/ReceitaButton";
+import AppTabsScreen from "../../Components/TypeRecipe/recipeTypeAll";
+import ViewTabsType from "../../Components/TypeRecipe/recipeTypeAll";
+import ContainerNavigation from "../../Components/TypeRecipe/recipeTypeAll";
+import RecipeTypeAll from "../../Components/TypeRecipe/recipeTypeAll";
 
-import data from "../../data/data.json"
+
+
 
 export default function HomeScreen() {
 
-  const [searchRecipes, setSearch] = useState(); 
-  const [expoPushToken, setExpoPushToken] = useState('');
-  const [notification, setNotification] = useState(false);
-  const notificationListener = useRef();
-  const responseListener = useRef();
-  
-  const recipeType = () => {
-    alert("We don't have any posts yet");
-  };
-  useEffect(() => {
-    registerForPushNotificationsAsync().then(token => setExpoPushToken(token));
+  const [like, setlike] = useState(false);
+  const dispatch = useDispatch();
 
-    notificationListener.current = Notifications.addNotificationReceivedListener(notification => {
-      setNotification(notification);
-    });
+  const addLiked = (like = false) => {
+    (e) => setName(e.target.value)
+    dispatch(changeLike(like = !like));
+    console.log("(e) => setName(e.target.value)" + like);
+  }
+  const removeLiked = () => {
+    (e) => setName(e.target.value)
+    dispatch(changeLike(like = !like));
+    console.log("(e) => setName(e.target.value)" + like);
+  }
 
-    responseListener.current = Notifications.addNotificationResponseReceivedListener(response => {
-      console.log(response);
-    });
+  // const recipeType = () => {
+  //   return (
+  //   <RecipeTypeAll></RecipeTypeAll>
+  //   )
+  // };
 
-    return () => {
-      Notifications.removeNotificationSubscription(notificationListener.current);
-      Notifications.removeNotificationSubscription(responseListener.current);
-    };
-  }, []);
+  // 
+  const ReceitasDrink = data.recipes.filter(recipes => recipes.recipeType === "Drink");
+  const ReceitasFood = data.recipes.filter(recipes => recipes.recipeType === "Food");
+  //
 
   return (
     <SafeAreaView style={styles.container}>
@@ -49,10 +58,10 @@ export default function HomeScreen() {
       <View style={styles.containeCategry}>
         <TextTitle labelButton="Category" />
         <View style={styles.containeRow}>
-          <ButtonCategory labelButton="All" onpress={recipeType} />
-          <ButtonCategory labelButton="Food" onpress={recipeType} />
-          <ButtonCategory labelButton="Drink" onpress={recipeType} />
-          <ButtonCategory labelButton="candy" onpress={recipeType} />
+          <ButtonCategory  labelButton="All" onpress={ContainerNavigation} />
+          <ButtonCategory  labelButton="Food" onpress={ContainerNavigation} />
+          <ButtonCategory  labelButton="Drink" onpress={ContainerNavigation} />
+          <ButtonCategory  labelButton="candy" onpress={ContainerNavigation} />
         </View>
       </View>
       <Spacing />
@@ -61,77 +70,44 @@ export default function HomeScreen() {
           <TextTitle labelButton="Recipes" />
         </View>
         <View style={styles.containeCardRecipes}>
-          {
-            data.recipes.map((item, index) => {
-              return (
-                <View style={styles.containeRow}>
-                    <RecipesCard
-                      imagePost={item.recipeImageUrl}
-                      userProfileImageUrl={item.userProfileImageUrl}
-                      userProfileName={item.userProfileName}
-                      recipeTitle={item.recipeTitle}
-                      recipeType={item.recipeType}
-                      recipeIngredients={item.recipeIngredients} />
-                  <TouchableOpacity style={styles.Like} onPress={async () => {
-                    await schedulePushNotification();
-                  }}>
-                      <Like />
-                  </TouchableOpacity>
-                </View>
-              )
-            })
-          }
+          <>
+            <RecipeTypeAll />
+            <RecipeTypeAll />
+          </>
         </View>
       </ScrollView>
     </SafeAreaView >
   );
 }
 
-
-///
-
-
-async function schedulePushNotification() {
-  
-  await Notifications.scheduleNotificationAsync({
-    namePerson: "Mario 📬",
-    content: {
-      body: `So-and-so liked this recipe`,
-      data: { data: ' - 5 min' },
-    },
-    trigger: { seconds: 2 }, // timer do tempo que a aplicação vai levar para acionar a notificação
-  });
-} //notificação local,
-
-
-
-async function registerForPushNotificationsAsync() {
-  let token;
-  if (Constants.isDevice) {
-    const { status: existingStatus } = await Notifications.getPermissionsAsync();
-    let finalStatus = existingStatus;
-    if (existingStatus !== 'granted') {
-      const { status } = await Notifications.requestPermissionsAsync();
-      finalStatus = status;
-    }
-    if (finalStatus !== 'granted') {
-      alert('Failed to get push token for push notification!');
-      return;
-    }
-    token = (await Notifications.getExpoPushTokenAsync()).data;
-    console.log(token);
-  } else {
-    alert('Must use physical device for Push Notifications');
-  }
-
-  if (Platform.OS === 'android') {
-    Notifications.setNotificationChannelAsync('default', {
-      name: 'default',
-      importance: Notifications.AndroidImportance.MAX,
-      vibrationPattern: [0, 250, 250, 250],
-      lightColor: '#FF231F7C',
-    });
-  }
-
-  return token;
-}
+// {
+//   data.recipes.map((props, index) => {
+//     console.log();
+//     return (
+//       <View style={styles.containeRow} key={props._id}>
+//         <TouchableOpacity>
+//           <RecipesCard
+//             key={index}
+//             imagePost={props.recipeImageUrl}
+//             userProfileImageUrl={props.userProfileImageUrl}
+//             userProfileName={props.userProfileName}
+//             recipeTitle={props.recipeTitle}
+//             recipeType={props.recipeType}
+//             recipeIngredients={props.recipeIngredients} />
+//         </TouchableOpacity>
+//         { }
+//         {
+//           like === true ? (
+//             <View style={styles.Like}>
+//               <Like onClick={addLiked} />
+//             </View>
+//           ) : (
+//             <View style={styles.Like}>
+//               <Like onClick={removeLiked} />
+//             </View>
+//           )
+//         }
+//       </View>
+//     )
+//   })
+// }

@@ -31,6 +31,20 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: "space-evenly",
   },
+  containeRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  containeCardRecipes:{
+      flexDirection: "row", 
+      flexWrap: 'wrap',
+      justifyContent: "space-evenly",
+  },
+  Like:{
+    position: "absolute",
+    marginTop: "47%",
+    marginLeft: "68%",
+  },
  
 });
 

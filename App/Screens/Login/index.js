@@ -46,9 +46,9 @@ export default function Login({ navigation }) {
       <Text style={styles.title}>Start Cooking</Text>
       <Text style={styles.subtitle}>Please enter your account here</Text>
 
-      <TextInput style={styles.input} placeholder="Username" onChangeText={(email) => setEmail(email)} value={email} leftIcon={{ type: "font-awesome", name: "envelope" }} />
+      <TextInput style={styles.input} inputType="email" placeholder="Username" onChangeText={(email) => setEmail(email)} value={email} leftIcon={{ type: "font-awesome", name: "envelope" }} />
 
-      <TextInput style={styles.input} placeholder="Password" onChangeText={(password) => setPassword(password)} value={password} leftIcon={{ type: "font-awesome", name: "envelope" }} />
+      <TextInput style={styles.input} type="password" placeholder="Password" onChangeText={(password) => setPassword(password)} value={password} leftIcon={{ type: "font-awesome", name: "envelope" }} />
 
       {email === "" || password === "" ? (
         <TouchableOpacity disabled={true} style={styles.button}>
@@ -62,7 +62,7 @@ export default function Login({ navigation }) {
 
       <TouchableOpacity>
         <Text style={styles.registration}>
-          Don't have registration.
+          Don't have registration?
           <Text style={styles.linkSubscrybe} onPress={() => navigation.navigate("NewUser")} >
             Subscribe now!
           </Text>
