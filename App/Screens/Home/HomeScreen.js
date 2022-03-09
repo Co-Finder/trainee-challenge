@@ -17,8 +17,9 @@ import AppTabsScreen from "../../Components/TypeRecipe/recipeTypeAll";
 import ViewTabsType from "../../Components/TypeRecipe/recipeTypeAll";
 import ContainerNavigation from "../../Components/TypeRecipe/recipeTypeAll";
 import RecipeTypeAll from "../../Components/TypeRecipe/recipeTypeAll";
-
-
+import RecipeTypeFood from "../../Components/TypeRecipe/recipeTypeAll";
+import RecipeTypeDrink from "../../Components/TypeRecipe/recipeTypeAll";
+import RecipeTypeCandy from "../../Components/TypeRecipe/recipeTypeAll";
 
 
 export default function HomeScreen() {
@@ -29,12 +30,10 @@ export default function HomeScreen() {
   const addLiked = (like = false) => {
     (e) => setName(e.target.value)
     dispatch(changeLike(like = !like));
-    console.log("(e) => setName(e.target.value)" + like);
   }
   const removeLiked = () => {
     (e) => setName(e.target.value)
     dispatch(changeLike(like = !like));
-    console.log("(e) => setName(e.target.value)" + like);
   }
 
   // const recipeType = () => {
@@ -58,10 +57,10 @@ export default function HomeScreen() {
       <View style={styles.containeCategry}>
         <TextTitle labelButton="Category" />
         <View style={styles.containeRow}>
-          <ButtonCategory  labelButton="All" onpress={ContainerNavigation} />
-          <ButtonCategory  labelButton="Food" onpress={ContainerNavigation} />
-          <ButtonCategory  labelButton="Drink" onpress={ContainerNavigation} />
-          <ButtonCategory  labelButton="candy" onpress={ContainerNavigation} />
+          <ButtonCategory labelButton="All" onpress={ContainerNavigation} />
+          <ButtonCategory labelButton="Food" onpress={ContainerNavigation} />
+          <ButtonCategory labelButton="Drink" onpress={ContainerNavigation} />
+          <ButtonCategory labelButton="candy" onpress={ContainerNavigation} />
         </View>
       </View>
       <Spacing />
@@ -69,12 +68,10 @@ export default function HomeScreen() {
         <View style={styles.containerFavorites}>
           <TextTitle labelButton="Recipes" />
         </View>
-        <View style={styles.containeCardRecipes}>
-          <>
-            <RecipeTypeAll />
-            <RecipeTypeAll />
-          </>
-        </View>
+        <RecipeTypeAll />
+        {/* <RecipeTypeFood /> */}
+        {/* <RecipeTypeDrink /> */}
+        {/* <RecipeTypeCandy /> */}
       </ScrollView>
     </SafeAreaView >
   );

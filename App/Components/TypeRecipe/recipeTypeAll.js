@@ -43,9 +43,9 @@ const ViewTabsType = () => (
 
 const ContainerNavigation = () => {
   return (
-  <NavigationContainer independent={true}>
-    <ViewTabsType/>
-  </NavigationContainer>
+    <NavigationContainer independent={true}>
+      <ViewTabsType />
+    </NavigationContainer>
   )
 }
 
@@ -57,7 +57,7 @@ const RecipeTypeAll = ({ labelButton }) => {
         data.recipes.map((item, index) => {
           console.log(index)
           return (
-            <View key={item._id} className={styles.container}>
+            <View key={item._id} style={styles.container}>
               <TouchableOpacity>
                 <RecipesCard
                   imagePost={item.recipeImageUrl}
@@ -68,8 +68,8 @@ const RecipeTypeAll = ({ labelButton }) => {
                   recipeIngredients={item.recipeIngredients}
                 />
               </TouchableOpacity>
-              <View style={styles.Like}>
-                {/* <Like onClick={addLiked} /> */}
+              <View style={styles.like}>
+                <Like onClick={addLiked} />
               </View>
             </View>
           )
@@ -98,7 +98,7 @@ const RecipeTypeFood = ({ labelButton }) => {
                     recipeIngredients={item.recipeIngredients}
                   />
                 </TouchableOpacity>
-                <View style={styles.Like}>
+                <View style={styles.like}>
                   <Like onClick={addLiked} />
                 </View>
               </View>
@@ -112,7 +112,7 @@ const RecipeTypeDrink = ({ labelButton }) => {
   return (
     <View style={styles.recipesContainer}>
       {
-        data.recipes.filter(recipes => recipes.recipeType === "Food")
+        data.recipes.filter(recipes => recipes.recipeType === "Drink")
           .map((item, index) => {
             console.log(index)
             return (
@@ -127,7 +127,7 @@ const RecipeTypeDrink = ({ labelButton }) => {
                     recipeIngredients={item.recipeIngredients}
                   />
                 </TouchableOpacity>
-                <View style={styles.Like}>
+                <View style={styles.like}>
                   <Like onClick={addLiked} />
                 </View>
               </View>
@@ -141,7 +141,7 @@ const RecipeTypeCandy = ({ labelButton }) => {
   return (
     <View style={styles.recipesContainer}>
       {
-        data.recipes.filter(recipes => recipes.recipeType === "Food")
+        data.recipes.filter(recipes => recipes.recipeType === "Candy")
           .map((item, index) => {
             console.log(index)
             return (
@@ -156,7 +156,7 @@ const RecipeTypeCandy = ({ labelButton }) => {
                     recipeIngredients={item.recipeIngredients}
                   />
                 </TouchableOpacity>
-                <View style={styles.Like}>
+                <View style={styles.like}>
                   <Like onClick={addLiked} />
                 </View>
               </View>
@@ -167,12 +167,17 @@ const RecipeTypeCandy = ({ labelButton }) => {
   );
 };
 
-export default (ContainerNavigation, RecipeTypeAll);
+export default ( RecipeTypeFood, RecipeTypeDrink, RecipeTypeCandy, RecipeTypeAll);
 
 const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
+  recipesContainer: {
+    flexDirection: "row",
+    flexWrap: 'wrap',
+    justifyContent: "space-evenly",
+  },
+  like: {
+    position: "absolute",
+    marginTop: "47%",
+    marginLeft: "68%",
   },
 });
