@@ -1,0 +1,158 @@
+{
+    "recipes": [
+        {
+            "_id": 1,
+            "recipeTitle": "Pancake",
+            "recipeType": "Food",
+            "recipeImageUrl": "https://images.unsplash.com/photo-1618839851913-052118691168?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "isLiked": true,
+            "menasageNotifi": "Posted a new recipe",
+            "dataTime": " - 5 min",
+            "recipeIngredients": "10 ing",
+            "userProfileImageUrl": "https://avowhcbwko.cloudimg.io/v7/https://montinkantigo.s3.amazonaws.com/data/camisas/ricardo-milos-estilo-anime-5ca449d2c880b-estampa-303.png",
+            "userProfileName": "Ricardo Milos",
+            "name": "Calum Lewis",
+            "email": "",
+            "DataRecipe": {
+                "igrediente": "igrediente 1",
+                "instructions": "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your"
+            }
+        },
+        {
+            "_id": 2,
+            "recipeTitle": "Salad",
+            "recipeType": "Food",
+            "recipeImageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=384&q=80",
+            "isLiked": false,
+            "menasageNotifi": "Posted a new recipe",
+            "recipeIngredients": "7 ing",
+            "dataTime": " - 9 min",
+            "userProfileImageUrl": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80",
+            "userProfileName": "John Priyadi",
+            "email": "",
+            "DataRecipe": {
+                "igrediente": "igrediente 1",
+                "instructions": "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your"
+            }
+        },
+        {
+            "_id": 3,
+            "recipeTitle": "Pancake",
+            "recipeType": "Food",
+            "recipeImageUrl": "https://images.unsplash.com/photo-1496568554266-bc8a06b4d8b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "isLiked": true,
+            "menasageNotifi": "Posted a new recipe",
+            "recipeIngredients": "9 ing",
+            "dataTime": " - 25 min",
+            "userProfileImageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            "userProfileName": "Eilif Sonas",
+            "email": "",
+            "DataRecipe": {
+                "igrediente": "igrediente 1",
+                "instructions": "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your"
+            }
+        },
+        {
+            "_id": 4,
+            "recipeTitle": "Salad",
+            "recipeType": "Food",
+            "recipeImageUrl": "https://images.unsplash.com/photo-1547496502-affa22d38842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=677&q=80",
+            "isLiked": "",
+            "menasageNotifi": "Sent a message",
+            "recipeIngredients": "6 ing",
+            "dataTime": " - 7 min",
+            "userProfileImageUrl": "https://images.unsplash.com/photo-1628890923662-2cb23c2e0cfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "userProfileName": "Elena Shelby",
+            "email": "",
+            "DataRecipe": {
+                "igrediente": "igrediente 1",
+                "instructions": "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your"
+            }
+        },
+        {
+            "_id": 5,
+            "recipeTitle": "chicken filet",
+            "recipeType": "Food",
+            "recipeImageUrl": "https://images.unsplash.com/photo-1526318896980-cf78c088247c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            "isLiked": "",
+            "menasageNotifi": "Liked a recipe",
+            "recipeIngredients": "23 ing",
+            "dataTime": " - 26 min",
+            "userProfileImageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            "userProfileName": "Mark IV",
+            "email": "",
+            "DataRecipe": {
+                "igrediente": "igrediente 1",
+                "instructions": "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your"
+            }
+        },
+        {
+            "_id": 6,
+            "recipeTitle": "Soup",
+            "recipeType": "Food",
+            "recipeImageUrl": "https://images.unsplash.com/photo-1505253668822-42074d58a7c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            "isLiked": true,
+            "menasageNotifi": "Liked a recipe",
+            "recipeIngredients": "5 ing",
+            "dataTime": " - 34 min",
+            "userProfileImageUrl": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+            "userProfileName": "Mateus",
+            "email": "",
+            "DataRecipe": {
+                "igrediente": "igrediente 1",
+                "instructions": "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your"
+            }
+        },
+        {
+            "_id": 7,
+            "recipeTitle": "Drink Citrus Fruit",
+            "recipeType": "Drink",
+            "recipeImageUrl": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+            "isLiked": false,
+            "menasageNotifi": "Liked a recipe",
+            "recipeIngredients": "3 ing",
+            "dataTime": " - 34 min",
+            "userProfileImageUrl": "https://i0.wp.com/www.acegis.com/wp-content/uploads/2019/07/marie-curie-mulheres-na-cie%CC%82ncia-ACEGIS.jpg?fit=744%2C389&ssl=1",
+            "userProfileName": "Marie Curie",
+            "email": "",
+            "DataRecipe": {
+                "igrediente": "igrediente 1",
+                "instructions": "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your"
+            }
+        },
+        {
+            "_id": 8,
+            "recipeTitle": "Herbs Tea",
+            "recipeType": "Drink",
+            "recipeImageUrl": "https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            "isLiked": true,
+            "menasageNotifi": "Liked a recipe",
+            "recipeIngredients": "4 ing",
+            "dataTime": " - 20 min",
+            "userProfileImageUrl": "https://observatoriodocinema.uol.com.br/wp-content/uploads/2021/10/dwayne-johnson-the-rock.webp",
+            "userProfileName": "Dwayne Johnson",
+            "email": "",
+            "DataRecipe": {
+                "igrediente": "igrediente 1",
+                "instructions": "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your"
+            }
+        },
+        {
+            "_id": 8,
+            "recipeTitle": "Donut",
+            "recipeType": "Candy",
+            "recipeImageUrl": "https://images.unsplash.com/photo-1514517521153-1be72277b32f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            "isLiked": true,
+            "menasageNotifi": "Liked a recipe",
+            "recipeIngredients": "5 ing",
+            "dataTime": " - 20 min",
+            "userProfileImageUrl": "https://br.web.img2.acsta.net/r_1280_720/medias/nmedia/18/91/08/21/20128480.jpg",
+            "userProfileName": "Mason Gamble",
+            "email": "",
+            "DataRecipe": {
+                "igrediente": "igrediente 1",
+                "instructions": "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your"
+            }
+        }
+    ]
+}

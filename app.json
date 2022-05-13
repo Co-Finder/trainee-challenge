@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "Start-Cooking",
+    "slug": "Start-Cooking",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./App/img/Onboarding-logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFE600"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "expo.notifications.tutorial",
+      "permissions": ["NOTIFICATIONS"],
+      "useNextNotificationsApi": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
