@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Text, Image, View, TextInput, TouchableOpacity, KeyboardAvoidingView } from "react-native";
-import firebase from "../../firebaseConfig/firebaseConfig";
+import firebase from "../../config/firebaseConfig";
 import styles from "./styles";
 
 export default function Login({ navigation }) {
@@ -20,8 +20,7 @@ export default function Login({ navigation }) {
       cameIn()
     })
       .catch((error) => {
-        let errorCode = error.code;
-        alert(errorCode)
+        alert(error)
       });
   };
 

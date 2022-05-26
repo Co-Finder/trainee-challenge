@@ -13,8 +13,6 @@ import NewUser from "../Screens/Login/NewUser/NewUser"
 import HomeScreen from "../Screens/Home/HomeScreen";
 import Profile from "../Screens/Profile/Profile";
 import NotificationsScreen from "../Screens/NotificationsExpo/index";
-import { Button, View } from "react-native";
-import NotificationFirebase from "../Screens/NotificationFirebase";
 import RecipeDetails from "../Screens/RecipeDetails";
 import Contacts from "../Screens/Contacts";
 // import NotificationsFirebase from "../Screens/NotificationFirebase";
@@ -46,12 +44,12 @@ const AppTabsScreen = () => (
       ),
     }}
     />
-    <AppTabs.Screen name="Notifications" component={NotificationsScreen} options={{
+    {/* <AppTabs.Screen name="Notifications" component={NotificationsScreen} options={{
       tabBarLabel: 'Notification', tabBarIcon: ({ color, size }) => (
         <MaterialCommunityIcons name="bell" color={color} size={size} />
       ),
     }}
-    />
+    /> */}
     <AppTabs.Screen name="Profile" component={Profile} options={{
       tabBarLabel: 'Profile', tabBarIcon: ({ color, size }) => (
         <MaterialCommunityIcons name="account" color={color} size={size} />

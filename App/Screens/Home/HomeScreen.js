@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { SafeAreaView, View, Text, TextInput, ScrollView, TouchableOpacity } from "react-native";
 import { useDispatch } from "react-redux";
 import { changeLike } from "../../redux/likeSlice";
-import * as Notifications from 'expo-notifications';
 import styles from "./styles";
 
 import data from "../../data/data.json"
@@ -10,42 +9,31 @@ import data from "../../data/data.json"
 import ButtonCategory from "../../Components/ButtonCategory";
 import TextTitle from "../../Components/TextTitle";
 import Spacing from "../../Components/Spacing";
-import RecipesCard from "../../Components/RecipesCard";
-import Like from "../../Components/Like";
-import ReceitaButton from "../../routes/ReceitaButton";
-import AppTabsScreen from "../../Components/TypeRecipe/recipeTypeAll";
-import ViewTabsType from "../../Components/TypeRecipe/recipeTypeAll";
 import ContainerNavigation from "../../Components/TypeRecipe/recipeTypeAll";
 import RecipeTypeAll from "../../Components/TypeRecipe/recipeTypeAll";
-import RecipeTypeFood from "../../Components/TypeRecipe/recipeTypeAll";
-import RecipeTypeDrink from "../../Components/TypeRecipe/recipeTypeAll";
-import RecipeTypeCandy from "../../Components/TypeRecipe/recipeTypeAll";
+
+import {
+  AdMobBanner,
+  AdMobInterstitial,
+  setTestDeviceIDAsync
+} from 'expo-ads-admob';
 
 
 export default function HomeScreen() {
 
-  const [like, setlike] = useState(false);
-  const dispatch = useDispatch();
+  useEffect(()=>{
+    async function loadAd(){
+      AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712');
+      InterstitialAd();
+    }
 
-  const addLiked = (like = false) => {
-    (e) => setName(e.target.value)
-    dispatch(changeLike(like = !like));
+    loadAd();
+  },[]);
+
+  async function InterstitialAd() {
+    await AdMobInterstitial.requestAdAsync({servePersonalizedAds: true});
+    await AdMobInterstitial.showAdAsync();
   }
-  const removeLiked = () => {
-    (e) => setName(e.target.value)
-    dispatch(changeLike(like = !like));
-  }
-
-  // const recipeType = () => {
-  //   return (
-  //   <RecipeTypeAll></RecipeTypeAll>
-  //   )
-  // };
-
-  // 
-  const ReceitasDrink = data.recipes.filter(recipes => recipes.recipeType === "Drink");
-  const ReceitasFood = data.recipes.filter(recipes => recipes.recipeType === "Food");
-  //
 
   return (
     <SafeAreaView style={styles.container}>
@@ -69,42 +57,14 @@ export default function HomeScreen() {
           <TextTitle labelButton="Recipes" />
         </View>
         <RecipeTypeAll />
-        {/* <RecipeTypeFood /> */}
-        {/* <RecipeTypeDrink /> */}
-        {/* <RecipeTypeCandy /> */}
+        <AdMobBanner
+          bannerSize="fullBanner"
+          adUnitID="ca-app-pub-3940256099942544/6300978111" // Test ID, Replace with your-admob-unit-id
+          setTestDeviceIDAsync
+          servePersonalizedAds // true or false
+          onDidFailToReceiveAdWithError={ (error) => {console.log(error);}} />
       </ScrollView>
     </SafeAreaView >
   );
 }
 
-// {
-//   data.recipes.map((props, index) => {
-//     console.log();
-//     return (
-//       <View style={styles.containeRow} key={props._id}>
-//         <TouchableOpacity>
-//           <RecipesCard
-//             key={index}
-//             imagePost={props.recipeImageUrl}
-//             userProfileImageUrl={props.userProfileImageUrl}
-//             userProfileName={props.userProfileName}
-//             recipeTitle={props.recipeTitle}
-//             recipeType={props.recipeType}
-//             recipeIngredients={props.recipeIngredients} />
-//         </TouchableOpacity>
-//         { }
-//         {
-//           like === true ? (
-//             <View style={styles.Like}>
-//               <Like onClick={addLiked} />
-//             </View>
-//           ) : (
-//             <View style={styles.Like}>
-//               <Like onClick={removeLiked} />
-//             </View>
-//           )
-//         }
-//       </View>
-//     )
-//   })
-// }

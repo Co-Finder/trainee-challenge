@@ -8,7 +8,6 @@ import {
     StyleSheet,
     TouchableOpacity,
 } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ListItem from '../../Components/ListItem';
 
@@ -65,7 +64,6 @@ const Contacts = () => {
                 keyExtractor={(item) => item.id}
             />
 
-            <StatusBar style="light" />
         </SafeAreaView>
     );
 };

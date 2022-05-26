@@ -20,7 +20,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "expo.notifications.tutorial",
+      "package": "receitas.do.dia",
       "permissions": ["NOTIFICATIONS"],
       "useNextNotificationsApi": true,
       "adaptiveIcon": {

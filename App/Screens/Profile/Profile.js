@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image, ScrollView, Button } from "react-native";
-import firebase from '../../firebaseConfig/firebaseConfig';
+import firebase from '../../config/firebaseConfig';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from "./styles";
 
@@ -10,8 +10,6 @@ import RecipesCard from "../../Components/RecipesCard"
 
 import data from "../../data/data.json"
 import Like from "../../Components/Like";
-
-
 
 
 export default function Profile({ navigation }) {
